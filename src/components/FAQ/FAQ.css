@@ -1,0 +1,101 @@
+.card {
+  position: relative;
+  width: 17rem;
+  height: 21rem;
+  background: linear-gradient(112deg, #8c9bb1 0%, #6f6f6f 100%);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  padding: 1rem;
+  overflow: hidden;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card svg {
+  width: 48px;
+  fill: #333;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover {
+  transform: rotate(-5deg) scale(1.1);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  background-color: #29f2d1;
+  opacity: 0;
+  background-image: url(../../assets/robovitics\ black\ logo.png);
+  background-repeat: no-repeat;
+  background-position-x: center;
+  background-position-y: bottom;
+  transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+}
+
+.card:hover .card__content {
+  transform: translate(-50%, -50%) rotate(0deg);
+  opacity: 1;
+}
+
+.card__title {
+  margin: 0;
+  font-size: 20px;
+  color: #333;
+  font-weight: 700;
+  text-align: center;
+}
+
+.card__description {
+  margin: 10px 0 0;
+  font-size: 20px;
+  color: #000000;
+  line-height: 1.4;
+}
+
+.card:hover svg {
+  scale: 0;
+  transform: rotate(-45deg);
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 70%;
+  gap: 7rem;
+}
+.faq {
+  background-image: url(../../assets/faqbackground.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+@media only screen and (max-width: 768px){
+  .card {
+    text-align: center;
+    height: 15rem;
+    width: 12rem;
+    font-size: 12px;
+  }
+
+  .card__description {
+    text-align: center;
+    height: 15rem;
+     
+    font-size: 12px;
+  }
+}

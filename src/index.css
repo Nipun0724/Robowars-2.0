@@ -1,13 +1,197 @@
-body {
+* {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body {
+  font-family: "Open Sans", sans-serif;
+  background: #0c0b09;
+  color: #fff;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #d9ba85;
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Playfair Display", serif;
+}
+
+section {
+  padding: 60px 0;
+  overflow: hidden;
+}
+
+.row {
+  --bs-gutter-x: 1.5rem;
+  /* --bs-gutter-y: 0; */
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  /* margin-top: calc(-1 * var(--bs-gutter-y)); */
+  /* margin-right: calc(-.5 * var(--bs-gutter-x)); */
+  /* margin-left: calc(-.5 * var(--bs-gutter-x)); */
+  margin-top: 4rem;
+  gap: 24px;
+}
+
+.aboutUs,
+.aboutgravitas,
+.media,
+.faq,
+.sponsers,
+.contactus {
+  display: flex;
+  align-items: center;
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.aboutUsText,
+.aboutgravitasText,
+.mediaText,
+.faqText,
+.sponsersText,
+.contactUsText {
+  color: #29f2d000;
+  font-size: 4rem;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  -webkit-text-stroke-color: #ffffff;
+  -webkit-text-stroke-width: 2px;
+  text-underline-offset: 0.25em;
+  margin-bottom: 4rem;
+  text-align: center;
+}
+
+.fst-italic {
+  font-style: italic !important;
+  font-size: 22px;
+  word-spacing: 8px;
+}
+
+.container-fluid {
+  opacity: 1;
+  -webkit-transform: none;
+  transform: none;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  /* gap: 23px;*/
+}
+
+
+
+.img-fluid {
+  /* max-width: 100%; */
+  /* height: auto; */
+  /* height: 1000px; */
+  width: 18rem;
+  height: 200px;
+}
+
+button {
+  position: relative;
+  /* padding: 10px 20px; */
+  border-radius: 50%;
+  border: 1px solid #717d8f;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: #717d8f;
+  color: #fff;
+  overflow: hidden;
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: all 0.2s ease-in;
+  -moz-transition: all 0.2s ease-in;
+  transition: all 0.2s ease-in;
+  width: 90px !important;
+  height: 90px !important;
+}
+
+button:hover {
+  background: rgb(41 241 208);
+  box-shadow: 0 0 30px 5px rgba(0, 126, 161, 0);
+  -webkit-transition: all 0.2s ease-out;
+  -moz-transition: all 0.2s ease-out;
+  transition: all 0.2s ease-out;
+}
+
+button:hover::before {
+  -webkit-animation: sh02 0.5s 0s linear;
+  -moz-animation: sh02 0.5s 0s linear;
+  animation: sh02 0.5s 0s linear;
+}
+
+button::before {
+  content: '';
+  display: block;
+  width: 0px;
+  height: 86%;
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  opacity: 0;
+  background: #fff;
+  box-shadow: 0 0 50px 30px #fff;
+  -webkit-transform: skewX(-20deg);
+  -moz-transform: skewX(-20deg);
+  -ms-transform: skewX(-20deg);
+  -o-transform: skewX(-20deg);
+  transform: skewX(-20deg);
+}
+
+@keyframes sh02 {
+  from {
+    opacity: 0;
+    left: 0%;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+    left: 100%;
+  }
+}
+
+button:active {
+  box-shadow: 0 0 0 0 transparent;
+  -webkit-transition: box-shadow 0.2s ease-in;
+  -moz-transition: box-shadow 0.2s ease-in;
+  transition: box-shadow 0.2s ease-in;
+}
+
+
+@media only screen and (max-width: 768px) {
+  .aboutUsText,
+  .aboutgravitasText,
+  .mediaText,
+  .faqText,
+  .sponsersText,
+  .contactUsText {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  } 
 }
