@@ -1,47 +1,89 @@
-import React, { useState } from 'react';
-import './FAQ.css';
-
-const FAQItem = ({ question, answer, isOpen, onClick }) => (
-  <div className={`faq-item ${isOpen ? 'open' : ''}`} onClick={onClick}>
-    <div className="faq-question">
-      <div className="faq-number">{question.id}</div>
-      <div className="faq-text">{question.text}</div>
-      <div className="faq-toggle">{isOpen ? '-' : '+'}</div>
-    </div>
-    {isOpen && <div className="faq-answer">{answer}</div>}
-  </div>
-);
-
+import React, { useRef } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
+import "./FAQ.css";
 const FAQ = () => {
-  const [openIndex, setOpenIndex] = useState(null);
+  const controls = useAnimation();
 
-  const faqs = [
-    { id: '01', text: 'When and where is Robowars happening?', answer: 'Robowars will be happening during Gravitas and will be from 30th Sep to 2nd Oct at the Outdoor stadium. Stay tuned for the timings!' },
-    { id: '02', text: 'Number of teams participating', answer: '40+.' },
-    { id: '03', text: 'How can you attend this event?', answer: 'Go to Gravitas website and search for Robowars and register for the event!' },
-    { id: '04', text: 'How long is the event?', answer: 'It happens for 4 hours throughout the day for up to 3 days!' },
-    { id: '05', text: 'Who is eligible to participate?', answer: 'If you’re a part of a team that builds bots and bots follow our regulations. Check out the rulebook above!' },
-    { id: '06', text: 'How long does each match usually last?', answer: '3 minutes each.' },
-  ];
+  // Ref for in-view detection
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
 
-  const toggleFAQ = (index) => {
-    setOpenIndex(openIndex === index ? null : index);
-  };
-
+  // Start animation when in view
+  if (inView) {
+    controls.start("visible");
+  }
   return (
-    <div className="faq-wrapper">
-      <h1 className="faqText">FAQs</h1>
-      <div className="faq-container">
-        {faqs.map((faq, index) => (
-          <FAQItem
-            key={faq.id}
-            question={faq}
-            answer={faq.answer}
-            isOpen={openIndex === index}
-            onClick={() => toggleFAQ(index)}
-          />
-        ))}
-      </div>
+    <div>
+      <h1 class="faqText">FAQ</h1>
+      <motion.div
+        className="faq-container"
+        id="faqsection"
+        ref={ref}
+        variants={{
+          hidden: { opacity: 0.8, x: -200 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        initial="hidden"
+        animate={controls}
+        transition={{ duration: 1 }}
+      >
+        <div className="faq-tab">
+          <input type="radio" name="acc" id="acc1" />
+          <label htmlFor="acc1">
+            <h2>01</h2>
+            <h3>How to apply?</h3>
+          </label>
+          <div className="faq-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur laudantium quia unde a impedit nam? Sed ut vitae
+              eveniet aliquam.
+            </p>
+          </div>
+        </div>
+        <div className="faq-tab">
+          <input type="radio" name="acc" id="acc2" />
+          <label htmlFor="acc2">
+            <h2>02</h2>
+            <h3>How to apply?</h3>
+          </label>
+          <div className="faq-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur laudantium quia unde a impedit nam? Sed ut vitae
+              eveniet aliquam.
+            </p>
+          </div>
+        </div>
+        <div className="faq-tab">
+          <input type="radio" name="acc" id="acc3" />
+          <label htmlFor="acc3">
+            <h2>03</h2>
+            <h3>How to apply?</h3>
+          </label>
+          <div className="faq-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur laudantium quia unde a impedit nam? Sed ut vitae
+              eveniet aliquam.
+            </p>
+          </div>
+        </div>
+        <div className="faq-tab">
+          <input type="radio" name="acc" id="acc4" />
+          <label htmlFor="acc4">
+            <h2>04</h2>
+            <h3>How to apply?</h3>
+          </label>
+          <div className="faq-content">
+            <p>
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+              Consectetur laudantium quia unde a impedit nam? Sed ut vitae
+              eveniet aliquam.
+            </p>
+          </div>
+        </div>
+      </motion.div>
     </div>
   );
 };

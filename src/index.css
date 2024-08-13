@@ -6,8 +6,9 @@
 
 body {
   font-family: "Open Sans", sans-serif;
-  background: #0c0b09;
+  background: #000;
   color: #fff;
+  
 }
 
 ::-webkit-scrollbar {
@@ -98,8 +99,6 @@ section {
   /* gap: 23px;*/
 }
 
-
-
 .img-fluid {
   /* max-width: 100%; */
   /* height: auto; */
@@ -143,7 +142,7 @@ button:hover::before {
 }
 
 button::before {
-  content: '';
+  content: "";
   display: block;
   width: 0px;
   height: 86%;
@@ -183,7 +182,6 @@ button:active {
   transition: box-shadow 0.2s ease-in;
 }
 
-
 @media only screen and (max-width: 768px) {
   .aboutUsText,
   .aboutgravitasText,
@@ -193,5 +191,5 @@ button:active {
   .contactUsText {
     font-size: 2rem;
     margin-bottom: 1rem;
-  } 
+  }
 }

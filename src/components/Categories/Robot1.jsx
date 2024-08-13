@@ -19,7 +19,7 @@ const Robot1 = ({ asset, title }) => {
     };
 
     const scene = new THREE.Scene();
-    scene.background = null; // Set background to null for transparency
+    scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -28,7 +28,7 @@ const Robot1 = ({ asset, title }) => {
       1000
     );
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true }); // Enable alpha for transparency
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document
       .getElementById("three-container1")
@@ -41,7 +41,7 @@ const Robot1 = ({ asset, title }) => {
       model.rotation.y = 0;
       model.rotation.z = 0;
       if (window.innerWidth < 900) {
-        model.scale.set(18, 18, 18);
+        model.scale.set(0.1, 0.2, 0.15);
       } else {
         model.scale.set(0.4, 0.4, 0.4);
       }

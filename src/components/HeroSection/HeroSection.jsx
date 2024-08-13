@@ -1,8 +1,15 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
+import { motion, useAnimation, useInView } from "framer-motion";
 import gif from "../../assets/robowars_logo.gif";
 import "./HeroSection.css";
 
 const HeroSection = () => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+  const controls = useAnimation();
+  if (inView) {
+    controls.start("visible");
+  }
   useEffect(() => {
     const playButton = document.getElementById("playButton");
     const videoPlayer = document.getElementById("videoPlayer");
@@ -76,26 +83,38 @@ const HeroSection = () => {
           data-aos-delay="100"
         >
           <div className="row">
-            <div className="col-lg-8">
+            <motion.div
+              className="col-lg-8"
+              ref={ref}
+              variants={{
+                hidden: { opacity: 0.8, x: -200 },
+                visible: { opacity: 1, x: 0 },
+              }}
+              initial="hidden"
+              animate={controls}
+              transition={{ duration: 1 }}
+            >
               <img src={gif} id="robowars_logo" alt="robowars_logo.gif" />
               <h1>
                 Welcome to <span>Robowars</span>
               </h1>
               <div className="btns">
                 <a
-                  href="https://events.vit.ac.in/"
+                  // href="/"
+                  onClick={() => alert("Feature Coming Soon...")}
                   className="btn-menu animated fadeInUp scrollto"
                 >
                   Register
                 </a>
                 <a
-                  href="index1.html"
+                  // href="/"
+                  onClick={() => alert("Feature Coming Soon...")}
                   className="btn-book animated fadeInUp scrollto"
                 >
                   Competition
                 </a>
               </div>
-            </div>
+            </motion.div>
             <button id="playButton">
               <i className="fa-solid fa-play"></i>
             </button>

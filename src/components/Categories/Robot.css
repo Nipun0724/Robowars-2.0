@@ -2,7 +2,7 @@
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)),
     url(../../assets/1000_F_185750874_rTbc977EBOkAS5a8lTCuwJYoUqwT0Zkh.jpg)
       center/cover fixed no-repeat;
-  clip-path: polygon(1% 0.6%, 99% 0.6%, 99% 61%, 80% 76.4%, 1% 76.4%);
+  clip-path: polygon(1% 0.6%, 99% 0.6%, 99% 48%, 1% 48%);
 }
 #three-container,
 #three-container1 {
@@ -12,7 +12,7 @@
   margin-top: -150px;
   margin-bottom: -20px;
 }
-#three-container1{
+#three-container1 {
   margin-left: -400px;
 }
 .robot-container h2 {
@@ -21,5 +21,12 @@
 }
 .white-container {
   background-color: white;
-  clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 100%, 0% 100%);
+  clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+@media only screen and (max-width: 768px) {
+  #three-container,
+  #three-container1 {
+    margin-top: -520px;
+    margin-bottom: -20px;
+  }
 }

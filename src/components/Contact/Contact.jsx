@@ -1,9 +1,20 @@
-import React, { useEffect } from "react";
+import React, { useRef, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import robovitics from "../../assets/robovitics black logo.png";
 import gif from "../../assets/war logo.gif";
 import "./Contact.css";
 
 const Contact = () => {
+  const controls = useAnimation();
+
+  // Ref for in-view detection
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true });
+
+  // Start animation when in view
+  if (inView) {
+    controls.start("visible");
+  }
   useEffect(() => {
     const preloader = document.getElementById("preloader");
     if (preloader) {
@@ -28,7 +39,17 @@ const Contact = () => {
         <div className="container aos-init aos-animate" data-aos="fade-up">
           <div className="row mt-5 temp">
             <div className="footer-top">
-              <div className="containerOfFooter">
+              <motion.div
+                className="containerOfFooter"
+                ref={ref}
+                variants={{
+                  hidden: { opacity: 0.8, x: -200 },
+                  visible: { opacity: 1, x: 0 },
+                }}
+                initial="hidden"
+                animate={controls}
+                transition={{ duration: 1 }}
+              >
                 <div className="info">
                   <div className="address">
                     <i className="bi bi-geo-alt"></i>
@@ -124,7 +145,7 @@ const Contact = () => {
                     <div className="box box4"></div>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </div>
         </div>
@@ -138,7 +159,7 @@ const Contact = () => {
           . All Rights Reserved
         </div>
       </div>
-      <div id="preloader"></div>
+      {/* <div id="preloader"></div> */}
       <a
         href="#"
         className="back-to-top d-flex align-items-center justify-content-center active"
