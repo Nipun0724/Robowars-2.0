@@ -1,6 +1,6 @@
 .gallery {
   position: relative;
-  margin: 2% 2%;
+  margin: 5% 2%;
   height: 70vh;
 }
 
@@ -9,8 +9,8 @@
 }
 .gallery .item {
   position: absolute;
-  width: 21vw;
-  height: 35vh;
+  width: 23vw;
+  height: 34vh;
   transition: transform 0.9s, width 0.9s, height 0.9s;
 }
 
@@ -20,7 +20,7 @@
 }
 
 .gallery div[data-pos="0"] {
-  width: 50vw;
+  width: 45vw;
   height: 70vh;
   z-index: 10;
 }
@@ -29,16 +29,16 @@ div[data-pos="0"] {
   transform: translate(0, 0);
 }
 div[data-pos="1"] {
-  transform: translate(51vw, 0);
+  transform: translate(47vw, 0);
 }
 div[data-pos="2"] {
-  transform: translate(76vw, 0);
+  transform: translate(72vw, 0);
 }
 div[data-pos="3"] {
-  transform: translate(51vw, 36vh);
+  transform: translate(47vw, 36vh);
 }
 div[data-pos="4"] {
-  transform: translate(76vw, 36vh);
+  transform: translate(72vw, 36vh);
 }
 
 @media (max-width: 800px) {

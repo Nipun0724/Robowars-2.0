@@ -2,7 +2,7 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import robovitics from "../../assets/robovitics logo.png";
-import gravitas from "../../assets/gravitas_logo-removebg-preview.png";
+import gravitas from "../../assets/gravitas-logo.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -20,7 +20,6 @@ const Navbar = () => {
       }
     } else {
       if (document.getElementById("home")) {
-        // const nav = document.getElementById("home");
         var lastScrollY = window.scrollY;
         window.addEventListener("scroll", () => {
           if (lastScrollY <= window.scrollY) {
@@ -65,6 +64,11 @@ const Navbar = () => {
         initial="hidden"
         animate={controls}
         transition={{ duration: 1 }}
+        style={
+          window.innerWidth < 1000
+            ? { padding: 0 }
+            : { paddingTop: "10px", backgroundColor: "rgb(0, 0, 0)" }
+        }
       >
         <div class="container-fluid">
           <button
@@ -75,6 +79,7 @@ const Navbar = () => {
             aria-controls="navbarCollapse"
             aria-expanded="false"
             aria-label="Toggle navigation"
+            style={{ outline: "none" }}
           >
             <span class="navbar-toggler-icon"></span>
           </button>

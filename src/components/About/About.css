@@ -5,6 +5,7 @@
 }
 .featurette-heading {
   margin-left: 10%;
+  margin-bottom: 3%;
 }
 .featurette {
   min-height: 70vh;
@@ -89,12 +90,8 @@
     padding: 10%;
   }
 
-  .robowars-desp {
-    margin-top: -5%;
-  }
-
   .gravitas-desp {
-    margin-top: -5%;
+    margin-top: -25%;
   }
 
   .left,

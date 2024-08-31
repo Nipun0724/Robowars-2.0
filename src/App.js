@@ -6,18 +6,28 @@ import Navbar from "./components/Navbar/Navbar";
 import Gallery from "./components/Gallery/Gallery";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Categories from "./components/Categories/Categories";
+import { Route, Routes, useLocation } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar />
-      <HeroSection />
-      <About />
-      <Categories />
-      <Gallery />
-      <FAQ />
-      <Sponsors />
-      <Contact />
+    <div className="App" style={{ overflowX: "hidden" }}>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <div>
+              <Navbar />
+              <HeroSection />
+              <About />
+              <Categories />
+              <Gallery />
+              <FAQ />
+              <Sponsors />
+              <Contact />
+            </div>
+          }
+        />
+      </Routes>
     </div>
   );
 }

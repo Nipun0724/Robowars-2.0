@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import "./About.css";
-import place from "../../assets/12.d2e2077d-9bc6-4b51-b9f3-64cead0bb03d.jpg";
+import place from "../../assets/gravitas.png";
+import batch from "../../assets/batchimage_hlzb9n.jpg";
+import arena from "../../assets/arena.jpeg";
 
 const About = () => {
   const [width, setWidth] = useState(window.innerWidth);
@@ -70,7 +72,7 @@ const About = () => {
           )}
         </div>
         <div className="col-md-5 right aboutImage">
-          <img src={place} alt="" />
+          <img src={batch} alt="" />
         </div>
       </motion.div>
       <motion.div
@@ -85,7 +87,7 @@ const About = () => {
         transition={{ duration: 1 }}
       >
         <div className="col-md-7 order-md-2 content leftText">
-          <h2 className="featurette-heading fw-normal lh-1">RoboWars</h2>
+          <h2 className="featurette-heading fw-normal lh-1 ">RoboWars</h2>
           {width < 1000 ? (
             <p className="lead">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
@@ -101,7 +103,7 @@ const About = () => {
           )}
         </div>
         <div className="col-md-5 order-md-1 leftImage aboutImage">
-          <img src={place} alt="" />
+          <img src={arena} alt="" />
         </div>
       </motion.div>
       <motion.div

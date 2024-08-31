@@ -1,7 +1,5 @@
 import React, { useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import autodesk from "../../assets/autodesk.png";
-import electric from "../../assets/electric.png";
 import "./Sponsors.css";
 
 const Sponsors = () => {
@@ -31,9 +29,7 @@ const Sponsors = () => {
             animate={controls}
             transition={{ duration: 1 }}
           >
-            {/* <img id="autodesk_img" src={autodesk} alt="autodesk.png" />
-            <img id="electric_img" src={electric} alt="electric.png" /> */}
-            <h1>Coming Soon...</h1>
+            <h1 style={{ marginTop: "30px" }}>Coming Soon...</h1>
           </motion.picture>
         </div>
       </section>
