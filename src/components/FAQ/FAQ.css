@@ -9,7 +9,18 @@
   max-width: 600px;
   margin: 20px auto;
 }
-
+.FAQtext{
+  font-family: "Playfair Display", serif;
+  color: #29f2d000;
+  font-size: 4rem;
+  text-decoration: underline;
+  text-decoration-thickness: 3px;
+  -webkit-text-stroke-color: #ffffff;
+  -webkit-text-stroke-width: 2px;
+  text-underline-offset: 0.25em;
+  margin-bottom: 4rem;
+  text-align: center;
+}
 .faq-wrapper .faq-item {
   margin: 18px 0;
   border-radius: 20px;
