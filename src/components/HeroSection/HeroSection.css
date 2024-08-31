@@ -7,6 +7,7 @@
   background-repeat: no-repeat;
   padding: 0;
   background-position-y: -200px;
+  margin-top: 10vh;
 }
 
 #hero:before {
@@ -22,8 +23,6 @@
 #hero .container {
   padding-top: 110px;
 }
-
-
 
 #hero h1 {
   margin: 0;
@@ -203,7 +202,7 @@
   position: relative;
   top: -100px;
 }
-@media only screen and (max-width: 768px){
+@media only screen and (max-width: 768px) {
   #hero h1 {
     font-size: 23px;
   }

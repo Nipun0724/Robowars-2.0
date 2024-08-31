@@ -1,6 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+  font-family: "Sd Robotics";
+  src: url("/public/robtronika-font/Robtronika-3lZyy.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
 * {
   margin: 0;
   padding: 0;
@@ -8,8 +14,8 @@
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
-  background: #0c0b09;
+  font-family: "Poppins";
+  background: #000;
   color: #fff;
 }
 
@@ -26,7 +32,6 @@ a:hover {
   color: #d9ba85;
   text-decoration: none;
 }
-
 h1,
 h2,
 h3,
@@ -35,7 +40,6 @@ h5,
 h6 {
   font-family: "Playfair Display", serif;
 }
-
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -67,22 +71,20 @@ section {
   flex-direction: column;
   gap: 2rem;
 }
-
+.featurette-heading {
+  font-family: "Sd Robotics", serif;
+}
 .aboutUsText,
 .aboutgravitasText,
 .mediaText,
 .faqText,
 .sponsersText,
 .contactUsText {
-  color: #29f2d000;
-  font-size: 4rem;
+  color: #fff;
   text-decoration: underline;
-  text-decoration-thickness: 3px;
-  -webkit-text-stroke-color: #ffffff;
-  -webkit-text-stroke-width: 2px;
   text-underline-offset: 0.25em;
-  margin-bottom: 4rem;
   text-align: center;
+  font-family: "Sd Robotics", serif;
 }
 
 .fst-italic {
@@ -101,8 +103,6 @@ section {
   /* gap: 23px;*/
 }
 
-
-
 .img-fluid {
   /* max-width: 100%; */
   /* height: auto; */
@@ -111,7 +111,7 @@ section {
   height: 200px;
 }
 
-button {
+#playButton {
   position: relative;
   /* padding: 10px 20px; */
   border-radius: 50%;
@@ -131,7 +131,7 @@ button {
   height: 90px !important;
 }
 
-button:hover {
+#playButton:hover {
   background: rgb(41 241 208);
   box-shadow: 0 0 30px 5px rgba(0, 126, 161, 0);
   -webkit-transition: all 0.2s ease-out;
@@ -139,14 +139,14 @@ button:hover {
   transition: all 0.2s ease-out;
 }
 
-button:hover::before {
+#playButton:hover::before {
   -webkit-animation: sh02 0.5s 0s linear;
   -moz-animation: sh02 0.5s 0s linear;
   animation: sh02 0.5s 0s linear;
 }
 
-button::before {
-  content: '';
+#playButton::before {
+  content: "";
   display: block;
   width: 0px;
   height: 86%;
@@ -179,13 +179,12 @@ button::before {
   }
 }
 
-button:active {
+#playButton:active {
   box-shadow: 0 0 0 0 transparent;
   -webkit-transition: box-shadow 0.2s ease-in;
   -moz-transition: box-shadow 0.2s ease-in;
   transition: box-shadow 0.2s ease-in;
 }
-
 
 @media only screen and (max-width: 768px) {
   .aboutUsText,
@@ -196,5 +195,5 @@ button:active {
   .contactUsText {
     font-size: 2rem;
     margin-bottom: 1rem;
-  } 
+  }
 }

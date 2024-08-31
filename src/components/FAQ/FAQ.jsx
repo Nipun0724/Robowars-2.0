@@ -69,7 +69,12 @@ const FAQ = () => {
     setOpenIndex(openIndex === index ? null : index);
   };
 
+  // Start animation when in view
+  if (inView) {
+    controls.start("visible");
+  }
   return (
+
     <>
       <h1 className='FAQtext text-5xl'>FAQS</h1>
       <div className="flex flex-col lg:flex-row lg:space-x-8 justify-center p-5">
