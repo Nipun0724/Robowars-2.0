@@ -1,3 +1,6 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 @font-face {
   font-family: "Sd Robotics";
   src: url("/public/robtronika-font/Robtronika-3lZyy.ttf") format("truetype");
