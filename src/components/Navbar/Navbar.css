@@ -7,7 +7,6 @@
 }
 .navbar img {
   height: 2rem;
-  margin-top: 1%;
 }
 
 .link {
@@ -25,10 +24,6 @@
 .no-wrap {
   white-space: nowrap;
   margin-left: 2.3vw;
-}
-
-.text-link {
-  margin-top: 1%;
 }
 
 /* For mobile view */

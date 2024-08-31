@@ -67,7 +67,7 @@ const Navbar = () => {
         style={
           window.innerWidth < 1000
             ? { padding: 0 }
-            : { paddingTop: "10px", backgroundColor: "rgb(0, 0, 0)" }
+            : { paddingTop: "20px", backgroundColor: "rgb(0, 0, 0)" }
         }
       >
         <div class="container-fluid">
@@ -117,7 +117,7 @@ const Navbar = () => {
               </li>
               <li class="nav-item">
                 <Link to="#home" class="link last">
-                  <img src={gravitas} alt="" />
+                  <img src={gravitas} alt="" style={{ marginTop: "-25px" }} />
                 </Link>
               </li>
             </ul>
