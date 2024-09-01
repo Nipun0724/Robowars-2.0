@@ -1,74 +1,142 @@
-import React, { useEffect } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import { motion, useInView, useAnimation } from "framer-motion";
 import "./About.css";
+import place from "../../assets/gravitas.png";
+import batch from "../../assets/batchimage_hlzb9n.jpg";
+import arena from "../../assets/arena.jpeg";
 
 const About = () => {
+  const [width, setWidth] = useState(window.innerWidth);
+
   useEffect(() => {
-    const lever = document.getElementById("switch");
-    const textarea = document.getElementById("mainDescriptionPara");
+    const handleResize = () => {
+      setWidth(window.innerWidth);
+    };
 
-    function updateDescription() {
-      if (lever.checked) {
-        textarea.innerHTML =
-          "We, RoboVITics-The official club of VIT, are a collection of vehement tech enthusiasts with the aspiration to learn and hone our skills & the drive to excel. As the official robotics club of VIT Vellore, our motto is to support aspiring robotics enthusiasts in working on jaw-dropping projects and discovering their specialities by holding numerous interactive workshops, seminars, and practical sessions. We work together on some remarkable projects and support exemplary teams that have received numerous accolades.";
-        textarea.style.padding = "2rem";
-      } else {
-        textarea.innerHTML =
-          "ROBOWARS is the flagship event of graVITas and one of the biggest combat robotics events in India. More than 40 bots engage in thrilling battles around-the-clock in the largest and safest arena in India for a chance to win the championship with their war machines. It proves to be an adrenaline rush to the participants as well as the audience. Teams all over the globe gather here to show off their fighting spirits and attain glory.";
-        textarea.style.padding = "2rem";
-      }
-    }
+    window.addEventListener("resize", handleResize);
 
-    // Add an event listener to the checkbox for change events
-    lever.addEventListener("change", updateDescription);
-
-    // Cleanup event listener on unmount
     return () => {
-      lever.removeEventListener("change", updateDescription);
+      window.removeEventListener("resize", handleResize);
     };
   }, []);
 
-  return (
-    <div>
-      <div className="aboutUs" id="aboutUsSection">
-        <h1 className="aboutUsText">About us</h1>
-        <div className="shortDescription">
-          <div className="checkbox-wrapper-35">
-            <input
-              value="private"
-              name="switch"
-              id="switch"
-              type="checkbox"
-              className="switch"
-            />
-            <label htmlFor="switch">
-              <span className="switch-x-toggletext">
-                <span className="switch-x-unchecked">
-                  <span className="switch-x-hiddenlabel">Unchecked: </span>About
-                  Robovitics
-                </span>
-                <span className="switch-x-checked">
-                  <span className="switch-x-hiddenlabel">Checked: </span>About
-                  Robo-Wars
-                </span>
-              </span>
-            </label>
-          </div>
+  const controls1 = useAnimation();
+  const ref1 = useRef(null);
+  const inView1 = useInView(ref1, { once: true });
+  if (inView1) {
+    console.log("Seen");
+    controls1.start("visible");
+  }
 
-          <div className="mainDescription">
-            <p id="mainDescriptionPara">
-              We, RoboVITics-The official club of VIT, are a collection of
-              vehement tech enthusiasts with the aspiration to learn and hone
-              our skills & the drive to excel. As the official robotics club of
-              VIT Vellore, our motto is to support aspiring robotics enthusiasts
-              in working on jaw-dropping projects and discovering their
-              specialities by holding numerous interactive workshops, seminars,
-              and practical sessions. We work together on some remarkable
-              projects and support exemplary teams that have received numerous
-              accolades.
+  const controls2 = useAnimation();
+  const ref2 = useRef(null);
+  const inView2 = useInView(ref2, { once: true });
+  if (inView2) {
+    controls2.start("visible");
+  }
+
+  const controls3 = useAnimation();
+  const ref3 = useRef(null);
+  const inView3 = useInView(ref3, { once: true });
+  if (inView3) {
+    controls3.start("visible");
+  }
+
+  return (
+    <div className="aboutUs">
+      <motion.div
+        className="row featurette"
+        ref={ref1}
+        variants={{
+          hidden: { opacity: 0.8, x: -200 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        initial="hidden"
+        animate={controls1}
+        transition={{ duration: 1 }}
+      >
+        <div className="col-md-7 content left">
+          <h2 className="featurette-heading fw-normal lh-1">RoboVITics</h2>
+          {width < 1000 ? (
+            <p className="lead">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+              et dolorem earum vel maxime neque.
             </p>
-          </div>
+          ) : (
+            <p className="lead">
+              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit sint
+              tempora voluptatum omnis iste mollitia officiis esse maxime
+              ducimus cum fugit voluptatem earum, eveniet, cupiditate similique
+              veniam architecto distinctio porro!
+            </p>
+          )}
         </div>
-      </div>
+        <div className="col-md-5 right aboutImage">
+          <img src={batch} alt="" />
+        </div>
+      </motion.div>
+      <motion.div
+        className="row featurette robowars-desp"
+        ref={ref2}
+        variants={{
+          hidden: { opacity: 0.8, x: 200 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        initial="hidden"
+        animate={controls2}
+        transition={{ duration: 1 }}
+      >
+        <div className="col-md-7 order-md-2 content leftText">
+          <h2 className="featurette-heading fw-normal lh-1 ">RoboWars</h2>
+          {width < 1000 ? (
+            <p className="lead">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+              et dolorem earum vel maxime neque.
+            </p>
+          ) : (
+            <p className="lead">
+              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+              Distinctio id vel aliquam accusantium eveniet non deleniti animi,
+              iure ad magni officia architecto repellendus placeat debitis ullam
+              amet! Error, dolorem eligendi!
+            </p>
+          )}
+        </div>
+        <div className="col-md-5 order-md-1 leftImage aboutImage">
+          <img src={arena} alt="" />
+        </div>
+      </motion.div>
+      <motion.div
+        className="row featurette gravitas-desp"
+        ref={ref3}
+        variants={{
+          hidden: { opacity: 0.8, x: -200 },
+          visible: { opacity: 1, x: 0 },
+        }}
+        initial="hidden"
+        animate={controls3}
+        transition={{ duration: 1 }}
+      >
+        <div className="col-md-7 content left">
+          <h2 className="featurette-heading fw-normal lh-1">GraVITas</h2>
+          {width < 1000 ? (
+            <p className="lead">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
+              et dolorem earum vel maxime neque.
+            </p>
+          ) : (
+            <p className="lead">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
+              sunt asperiores vel nulla, dicta tenetur nostrum quam iusto
+              laboriosam, nobis nihil minus hic magnam enim! Ipsum earum omnis
+              nostrum natus?
+            </p>
+          )}
+        </div>
+        <div className="col-md-5 right aboutImage">
+          <img src={place} alt="" />
+        </div>
+      </motion.div>
     </div>
   );
 };

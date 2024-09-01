@@ -19,7 +19,7 @@ const Robot2 = ({ asset, title }) => {
     };
 
     const scene = new THREE.Scene();
-    scene.background = null; // Set background to null for transparency
+    scene.background = null;
 
     const camera = new THREE.PerspectiveCamera(
       75,
@@ -28,7 +28,7 @@ const Robot2 = ({ asset, title }) => {
       1000
     );
 
-    const renderer = new THREE.WebGLRenderer({ alpha: true }); // Enable alpha for transparency
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(window.innerWidth, window.innerHeight);
     document.getElementById("three-container").appendChild(renderer.domElement);
 
@@ -39,9 +39,9 @@ const Robot2 = ({ asset, title }) => {
       model.rotation.y = 0;
       model.rotation.z = 0;
       if (window.innerWidth < 900) {
-        model.scale.set(18, 18, 18);
+        model.scale.set(0.2, 0.2, 0.2);
       } else {
-        model.scale.set(0.5, 0.4, 0.4);
+        model.scale.set(0.55, 0.4, 0.4);
       }
       scene.add(model);
 
@@ -92,8 +92,8 @@ const Robot2 = ({ asset, title }) => {
   return (
     <div className="white-container">
       <div className="robot-container">
-              <h2 style={{marginTop:"-5%"}}>{title}</h2>
-        <div id="three-container" ref={threeContainerRef} ></div>   {" "}
+              <h2 style={{ marginTop: "-5%" }}>{title}</h2>
+        <div id="three-container" ref={threeContainerRef}></div>   {" "}
       </div>
     </div>
   );
