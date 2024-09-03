@@ -7,6 +7,7 @@ import Gallery from "./components/Gallery/Gallery";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Categories from "./components/Categories/Categories";
 import { Route, Routes, useLocation } from "react-router-dom";
+import Tournament from "./components/Tournament/Tournament";
 
 function App() {
   return (
@@ -24,6 +25,14 @@ function App() {
               <FAQ />
               <Sponsors />
               <Contact />
+            </div>
+          }
+        />
+        <Route
+          path="/tournament"
+          element={
+            <div>
+              <Tournament />
             </div>
           }
         />
