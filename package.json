@@ -9,6 +9,8 @@
     "@g-loot/react-tournament-brackets": "^1.0.30",
     "@react-hook/window-size": "^3.1.1",
     "@react-spring/parallax": "^9.7.4",
+    "@react-three/drei": "^9.112.0",
+    "@react-three/fiber": "^8.17.6",
     "@testing-library/jest-dom": "^5.17.0",
     "@testing-library/react": "^13.4.0",
     "@testing-library/user-event": "^13.5.0",
