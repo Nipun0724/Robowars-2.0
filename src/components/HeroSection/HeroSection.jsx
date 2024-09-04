@@ -9,7 +9,7 @@ const HeroSection = () => {
     <div className="hero-section">
       <div className="content-wrapper">
         <div className="title">
-          <h1>ROBOWARS</h1>
+          <h1 className="herologo">ROBOWARS</h1>
           <img src={robowarsLogo} alt="Robowars Logo" />
         </div>
         <div className="content">
