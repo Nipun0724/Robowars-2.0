@@ -12,33 +12,16 @@
   overflow: hidden;
   padding: 20px;
 }
-
 .faq-tab input[type="radio"] {
   display: none; /* Hides the radio buttons */
 }
-
-.FAQtext{
-  font-family: "Playfair Display", serif;
-  color: #29f2d000;
-  font-size: 4rem;
-  text-decoration: underline;
-  text-decoration-thickness: 3px;
-  -webkit-text-stroke-color: #ffffff;
-  -webkit-text-stroke-width: 2px;
-  text-underline-offset: 0.25em;
-  margin-bottom: 4rem;
-  text-align: center;
+.faq-tab label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  gap: 10px;
+  padding: 10px;
 }
-.faq-wrapper .faq-item {
-  margin: 18px 0;
-  border-radius: 20px;
-  overflow: hidden;
-  transition: background-color 0.3s ease;
-  background-color: #000000;
-  color: #ffffff;
-  position: relative;
-}
-
 .faq-tab label::after {
   content: "+";
   position: absolute;
@@ -51,11 +34,9 @@
 .faq-tab:hover label::after {
   color: aqua;
 }
-
 .faq-tab input[type="radio"]:checked + label::after {
   transform: rotate(135deg);
 }
-
 .faq-tab label h2 {
   background: linear-gradient(135deg, #1f2544, #474f7a);
   display: flex;
@@ -64,28 +45,23 @@
   padding: 0px 7px 7px 5px;
   border-radius: 5px;
 }
-
 .faq-tab label h3 {
   position: relative;
   z-index: 10;
 }
-
 .faq-content {
   transition: 1s;
   max-height: 0;
   overflow: hidden;
   z-index: 10;
 }
-
 .faq-tab input[type="radio"]:checked ~ .faq-content {
   max-height: 100vh;
 }
-
 .faq-content p {
   position: relative;
   padding: 5px;
 }
-
 .faq-tab input[type="radio"]:checked ~ label h2 {
   position: absolute;
   top: 0;
@@ -96,14 +72,8 @@
   justify-content: flex-end;
   font-size: 9em;
 }
-
 @media only screen and (max-width: 768px) {
   .faqText {
     margin-top: 40%;
   }
-}
-
-.faq-wrapper .faq-item.open .faq-answer {
-  background-color: #a5d6a7;
-  color: #000;
 }
