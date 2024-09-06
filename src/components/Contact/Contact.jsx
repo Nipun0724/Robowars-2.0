@@ -78,24 +78,30 @@ const Contact = () => {
               >
                 
                 
-            <div className="bg-[#27074d] rounded-2xl shadow-sm shadow-[#27074d] px-1.5 pt-2 pb-4 m-0">
-              <div className="relative flex justify-center items-center h-50 w-78 p-4 bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8 origin-bottom-right overflow-hidden mb-[1rem] transition duration-500 hover:rotate-12 
-              before:absolute before:w-20 before:h-20 before:bg-[#27074d] before:rounded-full before:blur-xl before:top-20 before:right-16 before:transition before:duration-500 hover:before:translate-y-12 hover:before:-translate-x-32 
-              after:absolute after:w-24 after:h-24 after:bg-[#27074d] after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:transition after:duration-500 hover:after:translate-x-24">
-              <div className="z-10 flex flex-col items-center gap-2">
-              <span className="text-slate-400 text-4xl font-bold">ARYAN <br></br> BHARUKA </span>
-              <p className="text-gray-50">Chair person<br></br>Ph : 9518761640</p>
-            </div>
-            </div>
-<div className="relative flex justify-center items-center p-5 h-50 w-78 bg-neutral-900 rounded-2xl outline outline-slate-400 -outline-offset-8 origin-bottom-right overflow-hidden mb-[1rem] transition duration-500 hover:rotate-12 
-  before:absolute before:w-20 before:h-20 before:bg-[#27074d] before:rounded-full before:blur-xl before:top-20 before:right-16 before:transition before:duration-500 hover:before:translate-y-12 hover:before:-translate-x-32 
-  after:absolute after:w-24 after:h-24 after:bg-[#27074d] after:rounded-full after:blur-xl after:bottom-32 after:right-16 after:transition after:duration-500 hover:after:translate-x-24">
-  <div className="z-10 flex flex-col items-center gap-2">
-    <span className="text-slate-400 text-4xl font-bold">ANIRUDDH <br></br> CHAUDARY </span>
-    <p className="text-gray-50">Vice Chair Person<br></br>Ph : 7977957614</p>
-  </div>
+                <div className="tw-bg-[#27074d] tw-rounded-2xl tw-h-100 tw-shadow-sm tw-shadow-[#27074d] tw-px-1.5 tw-pt-0 tw-pb-[-1rem] tw-m-0">
+                  <div className="tw-relative tw-flex tw-justify-center tw-items-center tw-h-52 tw-w-78 tw-px-20 tw-py-0 tw-bg-neutral-900 tw-rounded-2xl tw-outline tw-outline-slate-400 tw--outline-offset-8 tw-origin-bottom-right tw-overflow-hidden tw-mt-[-1rem] tw-mb-[0rem] tw-transition tw-duration-500 hover:tw-rotate-12
+  before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#27074d] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
+  after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#27074d] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
+    <div className="tw-z-10 tw-flex tw-flex-col tw-items-center tw-gap-2">
+      <span className="tw-text-slate-400 tw-text-4xl tw-font-bold">ARYAN <br /> BHARUKA </span>
+      <p className="tw-text-gray-50">Chair person<br />Ph : 9518761640</p>
+    </div>
+  </div>
+  <div className="tw-relative tw-flex tw-justify-center tw-items-center tw-p-5 tw-h-52 tw-w-78 tw-bg-neutral-900 tw-rounded-2xl tw-outline tw-outline-slate-400 tw--outline-offset-8 tw-origin-bottom-right tw-overflow-hidden tw-mb-[1rem] tw-transition tw-duration-500 hover:tw-rotate-12
+    before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#27074d] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
+    after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#27074d] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
+    <div className="tw-z-10 tw-flex tw-flex-col tw-items-center tw-gap-2">
+      <span className="tw-text-slate-400 tw-text-4xl tw-font-bold">ANIRUDDH <br /> CHAUDARY </span>
+      <p className="tw-text-gray-50">Vice Chair Person<br />Ph : 7977957614</p>
+    </div>
+  </div>
 </div>
-</div>
+
+
+
+
+
+
 
                 <img src={gif} alt="war logo" className="war-logo"/>
                 <div>
@@ -110,9 +116,12 @@ const Contact = () => {
                       <div className="box box1">
                         <span className="icon">
                           <svg
+                            width="30px"
+                            height="30px"
                             viewBox="0 0 30 30"
                             xmlns="http://www.w3.org/2000/svg"
                             className="svg"
+                            
                           >
                             <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
                           </svg>
@@ -187,25 +196,33 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <div className="bg-[#945ebd] text-white flex flex-wrap justify-evenly py-1.5">
-      <div className='flex'>
-      <i className="bi bi-envelope px-2"></i>
-      <p className="text-white"><a href="mailto:robovitics@vit.ac.in" target="_blank"> robovitics@vit.ac.in</a></p>
-      </div>
-
-      <div className='flex'>
-      <i className="bi bi-geo-alt px-1"></i>
-      <p> <a href="https://maps.app.goo.gl/rjWZsSapLKoqnVnTA" target="_blank">
-      VIT VELLORE, Tamilnadu, 632,014</a></p>
-      </div>
-      </div>
-      {/* <div id="preloader"></div> */}
-      <a
-        href="#"
-        className="back-to-top d-flex align-items-center justify-content-center active"
-      >
-        <i className="bi bi-arrow-up-short"></i>
+      <div className="tw-bg-[#945ebd] tw-text-white tw-flex tw-flex-wrap tw-justify-evenly tw-py-1.5">
+  <div className='tw-flex'>
+    <i className="bi bi-envelope tw-px-2"></i>
+    <p className="tw-text-white">
+      <a href="mailto:robovitics@vit.ac.in" target="_blank" rel="noopener noreferrer">
+        robovitics@vit.ac.in
       </a>
+    </p>
+  </div>
+
+  <div className='tw-flex'>
+    <i className="bi bi-geo-alt tw-px-1"></i>
+    <p>
+      <a href="https://maps.app.goo.gl/rjWZsSapLKoqnVnTA" target="_blank" rel="noopener noreferrer">
+        VIT VELLORE, Tamilnadu, 632,014
+      </a>
+    </p>
+  </div>
+</div>
+{/* <div id="preloader"></div> */}
+<a
+  href="#"
+  className="tw-back-to-top tw-d-flex tw-align-items-center tw-justify-content-center tw-active"
+>
+  <i className="bi bi-arrow-up-short"></i>
+</a>
+
     </div>
   );
 };
