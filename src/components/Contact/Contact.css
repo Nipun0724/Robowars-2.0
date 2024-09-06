@@ -398,7 +398,7 @@
     border-radius: 20px;
     width: 20rem;
     height: 29rem;
-    left:7rem;
+    left:12rem;
     position: relative;
     top:2rem;
     margin-top: 2rem;
@@ -446,8 +446,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    overflow-x: hidden;
-    overflow-y: auto;
+    
   }
 
   .contact-box {
@@ -468,20 +467,40 @@
 
   .card1 {
     width: 100%;
-    height: auto;
-    border-radius: 10px;
-    display: block; /* Ensure it is displayed */
-    visibility: visible; /* Ensure visibility */
-    z-index: 1;
+    border-radius: 20px;
+    width: 20rem;
+    height: 29rem;
+    left:0rem;
+    position: relative;
+    top:2rem;
+    margin-top: 2rem;
+  }
+  
+  
+  .logo {
+    position: absolute;
+    top:50;
+    left:8rem;
+    height:33rem;
+    width:16rem;
+    transform: translate(-50%,-50%);
+    transition: all 0.6s ease-in-out;
+  }
+  .card1:hover {
+    transform: scale(1.05);
+  }
+  
+  .card1:hover .box {
+    bottom: -1px;
+    left: -1px;
+  }
+  
+  .card1:hover .logo {
+    transform: translate(0, 0);
+    top: 0;
+    left: 0;
   }
 
-  .logo {
-    width: 17rem;
-    height: 2px;
-    display: block; /* Ensure it is displayed */
-    visibility: visible; /* Ensure visibility */
-    z-index: 1; /* Bring to the front if overlapping */
-  }
 
   .war-logo {
     margin-left: 0;
