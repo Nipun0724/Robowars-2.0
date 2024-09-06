@@ -1,6 +1,7 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect,useState } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
-import robovitics from "../../assets/robovitics black logo.png";
+import robovitics_mob from "../../assets/RoboVITics White Logo.svg";
+import robovitics_desktop from "../../assets/robovitics logo.png";
 import gif from "../../assets/war logo.gif";
 import "./Contact.css";
 
@@ -29,6 +30,31 @@ const Contact = () => {
       };
     }
   }, []);
+  const LogoComponent = () => {
+    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowWidth(window.innerWidth);
+      };
+      window.addEventListener("resize", handleResize);
+  
+      // Cleanup event listener on component unmount
+      return () => {
+        window.removeEventListener("resize", handleResize);
+      };
+    }, []);
+  
+    return (
+      <div className="logo">
+        {windowWidth > 1188 ? (
+          <img src={robovitics_desktop} alt="Desktop Logo" />
+        ) : (
+          <img src={robovitics_mob} alt="Mobile Logo" />
+        )}
+      </div>
+    );
+  };
 
   return (
     <div>
@@ -50,39 +76,38 @@ const Contact = () => {
                 animate={controls}
                 transition={{ duration: 1 }}
               >
-                <div className="info">
-                  <div className="address">
-                    <i className="bi bi-geo-alt"></i>
-                    <h4>Location:</h4>
-                    <p>VIT VELLORE, Tamil Nadu, 632014</p>
-                  </div>
-                  <div className="open-hours">
-                    <i className="bi bi-clock"></i>
-                    <h4>Open Hours:</h4>
-                    <p>
-                      Monday-Saturday:
-                      <br />
-                      11:00 AM - 05:00 PM
-                    </p>
-                  </div>
-                  <div className="email">
-                    <i className="bi bi-envelope"></i>
-                    <h4>Email:</h4>
-                    <p>robovitics@vit.ac.in</p>
-                  </div>
-                  <div className="phone">
-                    <i className="bi bi-phone"></i>
-                    <h4>Call:</h4>
-                    <p>(+91) 84910 92405</p>
-                  </div>
-                </div>
-                <img src={gif} alt="war logo" />
+                
+                
+                <div className="tw-bg-[#27074d] tw-rounded-2xl tw-h-100 tw-shadow-sm tw-shadow-[#27074d] tw-px-1.5 tw-pt-0 tw-pb-[-1rem] tw-m-0">
+                  <div className="tw-relative tw-flex tw-justify-center tw-items-center tw-h-52 tw-w-78 tw-px-20 tw-py-0 tw-bg-neutral-900 tw-rounded-2xl tw-outline tw-outline-slate-400 tw--outline-offset-8 tw-origin-bottom-right tw-overflow-hidden tw-mt-[-1rem] tw-mb-[0rem] tw-transition tw-duration-500 hover:tw-rotate-12
+  before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#27074d] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
+  after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#27074d] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
+    <div className="tw-z-10 tw-flex tw-flex-col tw-items-center tw-gap-2">
+      <span className="tw-text-slate-400 tw-text-4xl tw-font-bold">ARYAN <br /> BHARUKA </span>
+      <p className="tw-text-gray-50">Chair person<br />Ph : 9518761640</p>
+    </div>
+  </div>
+  <div className="tw-relative tw-flex tw-justify-center tw-items-center tw-p-5 tw-h-52 tw-w-78 tw-bg-neutral-900 tw-rounded-2xl tw-outline tw-outline-slate-400 tw--outline-offset-8 tw-origin-bottom-right tw-overflow-hidden tw-mb-[1rem] tw-transition tw-duration-500 hover:tw-rotate-12
+    before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#27074d] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
+    after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#27074d] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
+    <div className="tw-z-10 tw-flex tw-flex-col tw-items-center tw-gap-2">
+      <span className="tw-text-slate-400 tw-text-4xl tw-font-bold">ANIRUDDH <br /> CHAUDARY </span>
+      <p className="tw-text-gray-50">Vice Chair Person<br />Ph : 7977957614</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+                <img src={gif} alt="war logo" className="war-logo"/>
                 <div>
                   <div className="card1">
                     <div className="background"></div>
-                    <div className="logo">
-                      <img src={robovitics} alt="Robovitics logo" />
-                    </div>
+                    <LogoComponent/>
                     <a
                       href="https://www.instagram.com/robovitics/"
                       target="_blank"
@@ -91,9 +116,12 @@ const Contact = () => {
                       <div className="box box1">
                         <span className="icon">
                           <svg
+                            width="30px"
+                            height="30px"
                             viewBox="0 0 30 30"
                             xmlns="http://www.w3.org/2000/svg"
                             className="svg"
+                            
                           >
                             <path d="M 9.9980469 3 C 6.1390469 3 3 6.1419531 3 10.001953 L 3 20.001953 C 3 23.860953 6.1419531 27 10.001953 27 L 20.001953 27 C 23.860953 27 27 23.858047 27 19.998047 L 27 9.9980469 C 27 6.1390469 23.858047 3 19.998047 3 L 9.9980469 3 z M 22 7 C 22.552 7 23 7.448 23 8 C 23 8.552 22.552 9 22 9 C 21.448 9 21 8.552 21 8 C 21 7.448 21.448 7 22 7 z M 15 9 C 18.309 9 21 11.691 21 15 C 21 18.309 18.309 21 15 21 C 11.691 21 9 18.309 9 15 C 9 11.691 11.691 9 15 9 z M 15 11 A 4 4 0 0 0 11 15 A 4 4 0 0 0 15 19 A 4 4 0 0 0 19 15 A 4 4 0 0 0 15 11 z"></path>
                           </svg>
@@ -130,19 +158,37 @@ const Contact = () => {
                       rel="noopener noreferrer"
                     >
                       <div className="box box3">
-                        <span className="icon">
-                          <svg
-                            className="svg"
-                            xmlns="http://www.w3.org/2000/svg"
-                            height="1em"
-                            viewBox="0 0 512 512"
-                          >
-                            <path d="M256 512A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM216 336h24V272H216c-13.3 0-24-10.7-24-24s10.7-24 24-24h48c13.3 0 24 10.7 24 24v88h8c13.3 0 24 10.7 24 24s-10.7 24-24 24H216c-13.3 0-24-10.7-24-24s10.7-24 24-24zm40-208a32 32 0 1 1 0 64 32 32 0 1 1 0-64z"></path>
-                          </svg>
-                        </span>
-                      </div>
+                     <span className="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" className="svg" >
+      <switch>
+        <g>
+          <path fill="#FFF" d="M60 120C26.9 120 0 93.1 0 60S26.9 0 60 0s60 26.9 60 60-26.9 60-60 60zM60 5C29.7 5 5 29.7 5 60s24.7 55 55 55 55-24.7 55-55S90.3 5 60 5z" />
+          <path fill="#FFF" d="M60 120c-19.3 0-34.4-26.4-34.4-60S40.7 0 60 0s34.4 26.4 34.4 60-15.1 60-34.4 60zM60 5C43.8 5 30.5 29.7 30.5 60s13.2 55 29.5 55 29.5-24.7 29.5-55S76.2 5 60 5z" />
+          <path fill="#FFF" d="M12.2 25.6h95.6v5H12.2zM12.2 89.5h95.6v5H12.2zM2.5 57.5h115v5H2.5z" />
+          <path fill="#FFF" d="M57.5 2.5h5v115h-5z" />
+        </g>
+      </switch>
+    </svg>
+  </span>
+</div>
+
                     </a>
-                    <div className="box box4"></div>
+                    <a 
+                    href="https://www.facebook.com/robovitics"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >
+                      <div className="box box4">
+                    <span className="icon">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" className="svg">
+                       <path fillRule="evenodd" fill="#FFF" d="M12 5.5H9v-2a1 1 0 0 1 1-1h1V0H9a3 3 0 0 0-3 3v2.5H4V8h2v8h3V8h2l1-2.5z" clipRule="evenodd"></path>
+    </svg>
+  </span>
+</div>
+
+                    </a>
+                    
+                    
                   </div>
                 </div>
               </motion.div>
@@ -150,22 +196,33 @@ const Contact = () => {
           </div>
         </div>
       </section>
-      <div className="container">
-        <div className="copyright">
-          © Copyright{" "}
-          <strong>
-            <span>Robowars</span>
-          </strong>
-          . All Rights Reserved
-        </div>
-      </div>
-      {/* <div id="preloader"></div> */}
-      <a
-        href="#"
-        className="back-to-top d-flex align-items-center justify-content-center active"
-      >
-        <i className="bi bi-arrow-up-short"></i>
+      <div className="tw-bg-[#945ebd] tw-text-white tw-flex tw-flex-wrap tw-justify-evenly tw-py-1.5">
+  <div className='tw-flex'>
+    <i className="bi bi-envelope tw-px-2"></i>
+    <p className="tw-text-white">
+      <a href="mailto:robovitics@vit.ac.in" target="_blank" rel="noopener noreferrer">
+        robovitics@vit.ac.in
       </a>
+    </p>
+  </div>
+
+  <div className='tw-flex'>
+    <i className="bi bi-geo-alt tw-px-1"></i>
+    <p>
+      <a href="https://maps.app.goo.gl/rjWZsSapLKoqnVnTA" target="_blank" rel="noopener noreferrer">
+        VIT VELLORE, Tamilnadu, 632,014
+      </a>
+    </p>
+  </div>
+</div>
+{/* <div id="preloader"></div> */}
+<a
+  href="#"
+  className="tw-back-to-top tw-d-flex tw-align-items-center tw-justify-content-center tw-active"
+>
+  <i className="bi bi-arrow-up-short"></i>
+</a>
+
     </div>
   );
 };
