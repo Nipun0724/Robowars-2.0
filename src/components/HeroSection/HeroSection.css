@@ -1,226 +1,172 @@
-#hero {
-  width: 100%;
-  height: 100vh;
-  background-image: url(../../assets/background\ 1.jpg);
-  background-size: 100vw 100vh;
-  position: relative;
-  background-repeat: no-repeat;
-  padding: 0;
-  background-position-y: -200px;
-  margin-top: 10vh;
-}
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900&display=swap');
 
-#hero:before {
-  content: "";
-  background: rgba(0, 0, 0, 0.5);
-  position: absolute;
-  bottom: 0;
-  top: 0;
-  left: 0;
-  right: 0;
-}
-
-#hero .container {
-  padding-top: 110px;
-}
-
-#hero h1 {
+* {
   margin: 0;
-  font-size: 48px;
-  font-weight: 700;
-  line-height: 56px;
-  color: #fff;
-  font-family: "Poppins", sans-serif;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-#hero h1 span {
-  color: #74f7ff;
+h1.herologo{
+  margin-bottom: -0.5em;
 }
 
-#hero h2 {
-  color: #eee;
-  margin-bottom: 10px 0 0 0;
-  font-size: 22px;
+body {
+  background-color: #161719;
+  font-family: 'Poppins', sans-serif;
 }
 
-#hero .btns {
-  margin-top: 30px;
+.navbar {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 20px;
+  padding-top: 10px;
 }
 
-#hero .btn-menu,
-#hero .btn-book {
-  font-weight: 600;
-  font-size: 22px;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-  display: inline-block;
-  /* padding: 12px 30px; */
-  border-radius: 50px;
-  width: 15rem;
-  display: inline-flex;
+ul {
+  color: white;
+  display: flex;
+  justify-content: right;
+  align-items: center;
+  gap: 20px;
+  list-style: none;
+}
+
+li:hover {
+  color: #D64E2E;
+}
+
+.hero-section {
+  margin-top: 80px;
+  padding: 0 5%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.title {
+  text-align: center;
+  color: #D64E2E;
+  font-weight: bolder;
+  font-size: 40px;
+  font-family: 'Russo One', sans-serif;
+}
+
+.content-wrapper {
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  transition: 0.3s;
-  line-height: 1;
-  padding: 16px;
-  color: white;
-  border: 2px solid #cda45e;
-}
-
-#hero .btn-menu:hover,
-#hero .btn-book:hover {
-  background: #cda45e;
-  color: #fff;
-}
-
-#hero .btn-book {
-  margin-left: 15px;
-}
-
-#hero .play-btn {
-  width: 94px;
-  height: 94px;
-  background: radial-gradient(#cda45e 50%, rgba(205, 164, 94, 0.4) 52%);
-  border-radius: 50%;
-  display: block;
-  position: relative;
-  overflow: hidden;
-}
-
-#hero .play-btn::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 100;
-  transition: all 400ms cubic-bezier(0.55, 0.055, 0.675, 0.19);
-}
-
-#hero .play-btn::before {
-  content: "";
-  position: absolute;
-  width: 120px;
-  height: 120px;
-  animation-delay: 0s;
-  animation: pulsate-btn 2s;
-  animation-direction: forwards;
-  animation-iteration-count: infinite;
-  animation-timing-function: steps;
-  opacity: 1;
-  border-radius: 50%;
-  border: 5px solid rgba(205, 164, 94, 0.7);
-  top: -15%;
-  left: -15%;
-  background: rgba(198, 16, 0, 0);
-}
-
-#hero .play-btn:hover::after {
-  border-left: 15px solid #cda45e;
-  transform: scale(20);
-}
-
-#hero .play-btn:hover::before {
-  content: "";
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-40%) translateY(-50%);
-  width: 0;
-  height: 0;
-  border: none;
-  border-top: 10px solid transparent;
-  border-bottom: 10px solid transparent;
-  border-left: 15px solid #fff;
-  z-index: 200;
-  animation: none;
-  border-radius: 0;
-}
-
-@keyframes pulsate-btn {
-  0% {
-    transform: scale(0.6, 0.6);
-    opacity: 1;
-  }
-
-  100% {
-    transform: scale(1, 1);
-    opacity: 0;
-  }
-}
-#videoOverlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  z-index: 9999;
-  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
 }
 
-.back-button {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  background: transparent;
-  border: none;
+.content h2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #D64E2E;
+  font-weight: bolder;
+  font-size: 23px;
+  gap: 20px;
+  margin: 20px 0;
+}
+
+.content p {
   color: white;
-  font-size: 20px;
+  font-size: 18px;
+  margin: 20px 0;
+  max-width: 600px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.buttons button {
+  padding: 10px;
+  border: 2px solid #D64E2E;
+  border-radius: 20px;
+  color: white;
+  font-size: 18px;
+}
+
+.watch-live {
+  background-color: #D64E2E;
+}
+
+.matches {
+  background-color: #161719;
+}
+
+button:hover {
+  background-color: white;
+  color: #D64E2E;
+}
+
+li,
+button {
   cursor: pointer;
-  z-index: 10000;
 }
 
-.back-button:hover {
-  background-color: transparent;
-}
-
-#videoPlayer {
-  width: 80%;
-  height: auto;
-  margin: 20px auto;
-}
-#robowars_logo {
-  height: 200px;
-  width: auto;
-  position: relative;
-  z-index: -1;
-  /* top: 110px; */
-  left: 168px;
-}
-#playbutton {
-  position: relative;
-  top: 79px;
-}
-.col-lg-8 {
-  position: relative;
-  top: -100px;
-}
-@media only screen and (max-width: 768px) {
-  #hero h1 {
-    font-size: 23px;
+@media (min-width: 768px) {
+  .navbar {
+    padding-left: 50px;
   }
 
-  #robowars_logo {
-    left: 0;
+  .ul {
+    gap: 40px;
   }
 
-  #playButton {
-    display: none;
+  .content-wrapper {
+    flex-direction: row;
+    justify-content: space-between;
   }
 
-  #hero .btn-book {
-    margin-left: 0;
+  .content h2 {
+    font-size: 36px;
   }
-  #hero .btn-menu,
-  #hero .btn-book {
-    font-size: 11px;
-    width: 7rem;
+
+  .buttons {
+    flex-direction: row;
+    gap: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    padding-left: 100px;
+  }
+
+  .ul {
+    gap: 60px;
+  }
+
+  .title {
+    font-size: 50px;
+  }
+
+  .content h2 {
+    font-size: 40px;
+  }
+
+  .content p {
+    font-size: 20px;
+  }
+
+  .buttons button {
+    width: 150px;
   }
 }
