@@ -4,18 +4,18 @@ import "./FAQ.css"; // Ensure this file has styles that might be necessary for y
 const FAQItem = ({ question, isOpen, onClick, isLargeScreen }) => (
   <div className="relative">
     <div
-      className={`p-3 m-2 cursor-pointer border rounded-xl border-gray-300 flex items-center ${
+      className={`tw-p-3 tw-m-2 tw-cursor-pointer tw-border tw-rounded-xl tw-border-gray-300 tw-flex tw-items-center ${
         isOpen
-          ? "bg-white text-black border-gray-300 font-bold"
-          : "bg-black text-white"
+          ? "tw-bg-white tw-text-black tw-border-gray-300 tw-font-bold"
+          : "tw-bg-black tw-text-white"
       }`}
       onClick={onClick}
     >
-      <div className="flex-grow">{question.text}</div>
-      <div className="w-5 h-5 rounded-full bg-black"></div>
+      <div className="tw-flex-grow">{question.text}</div>
+      <div className="tw-w-5 tw-h-5 tw-rounded-full tw-bg-black"></div>
     </div>
     {!isLargeScreen && isOpen && (
-      <div className="p-4 m-2 border border-gray-300 rounded-xl bg-black text-white">
+      <div className="tw-p-4 tw-m-2 tw-border tw-border-gray-300 tw-rounded-xl tw-bg-black tw-text-white">
         <p>{question.answer}</p>
       </div>
     )}
@@ -70,11 +70,12 @@ const FAQ = () => {
   const toggleFAQ = (index) => {
     setOpenIndex(openIndex === index ? null : index);
   };
+  
   return (
     <>
-      <h1 className="FAQtext text-5xl">FAQS</h1>
-      <div className="flex flex-col lg:flex-row lg:space-x-8 justify-center p-5">
-        <div className={`lg:w-1/2 ${isLargeScreen ? "flex flex-col" : ""}`}>
+      <h1 className="FAQtext tw-text-5xl">FAQS</h1>
+      <div className="tw-flex tw-flex-col lg:tw-flex-row lg:tw-space-x-8 tw-justify-center tw-p-5">
+        <div className={`lg:tw-w-1/2 ${isLargeScreen ? "tw-flex tw-flex-col" : ""}`}>
           {faqs.map((faq, index) => (
             <FAQItem
               key={faq.id}
@@ -87,8 +88,8 @@ const FAQ = () => {
         </div>
 
         {isLargeScreen && openIndex !== null && (
-          <div className="lg:w-1/2 p-4 border border-gray-300 rounded-3xl bg-black text-white">
-            <h2 className="mb-2">Answer:</h2>
+          <div className="lg:tw-w-1/2 tw-p-4 tw-border tw-border-gray-300 tw-rounded-3xl tw-bg-black tw-text-white">
+            <h2 className="tw-mb-2">Answer:</h2>
             <p>{faqs[openIndex].answer}</p>
           </div>
         )}
