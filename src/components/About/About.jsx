@@ -1,144 +1,179 @@
-import React, { useRef, useState, useEffect } from "react";
-import { motion, useInView, useAnimation } from "framer-motion";
+import { useEffect, useState } from 'react';
 import "./About.css";
-import place from "../../assets/gravitas.png";
-import batch from "../../assets/batchimage_hlzb9n.jpg";
-import arena from "../../assets/arena.jpeg";
+import logo from "../../assets/Log.png";
+import AboutImage from "../../assets/AboutImage.jpg";
+import GravLogo from "../../assets/gravitas-logo.png";
+import warLogo from "../../assets/ROBOWARSmainLOGO.png";
 
-const About = () => {
-  const [width, setWidth] = useState(window.innerWidth);
+export default function AboutUs() {
+  const [scriptsLoaded, setScriptsLoaded] = useState(false);
+  const [hoveredCard, setHoveredCard] = useState(null);
+
+  const handleMouseEnter = (cardId) => {
+    setHoveredCard(cardId);
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredCard(null);
+  };
+
+  const getCardContent = (cardId, imagePath, expandedContent) => {
+    if (hoveredCard === cardId||window.innerWidth < 1000) {
+      return (
+        <div className="expanded-content">
+          {expandedContent}
+        </div>
+      );
+    } else {
+      return <img src={imagePath} alt={`Image for ${cardId}`} style={{width:"80%"}}/>;
+    }
+  };
 
   useEffect(() => {
-    const handleResize = () => {
-      setWidth(window.innerWidth);
+    // Load GSAP and ScrollTrigger dynamically
+    const loadScript = (src, integrity) => {
+      return new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = src;
+        script.integrity = integrity;
+        script.crossOrigin = 'anonymous';
+        script.referrerPolicy = 'no-referrer';
+        script.onload = () => resolve(script);
+        script.onerror = () => reject(new Error(`Script load error: ${src}`));
+        document.body.appendChild(script);
+      });
     };
 
-    window.addEventListener("resize", handleResize);
+    const loadScripts = async () => {
+      try {
+        await Promise.all([
+          loadScript(
+            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js',
+            'sha512-7eHRwcbYkK4d9g/6tD/mhkf++eoTHwpNM9woBxtPUBWm67zeAfFC+HrdoE2GanKeocly/VxeLvIqwvCdk7qScg=='
+          ),
+          loadScript(
+            'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js',
+            'sha512-onMTRKJBKz8M1TnqqDuGBlowlH0ohFzMXYRNebz+yOcc5TQr/zAKsthzhuv0hiyUKEiQEQXEynnXCvNTOk50dg=='
+          )
+        ]);
+        setScriptsLoaded(true);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    loadScripts();
 
     return () => {
-      window.removeEventListener("resize", handleResize);
+      // Cleanup: Remove scripts when the component unmounts
+      const scripts = document.querySelectorAll('script[src*="gsap"], script[src*="ScrollTrigger"]');
+      scripts.forEach(script => script.remove());
     };
   }, []);
 
-  const controls1 = useAnimation();
-  const ref1 = useRef(null);
-  const inView1 = useInView(ref1, { once: true });
-  if (inView1) {
-    console.log("Seen");
-    controls1.start("visible");
-  }
+  useEffect(() => {
+    const applyScrollTrigger = () => {
+      if (scriptsLoaded && window.gsap && window.ScrollTrigger) {
+        window.gsap.killTweensOf(".card"); // Kill any existing tweens
+        window.ScrollTrigger.getAll().forEach(trigger => trigger.kill()); // Kill any existing ScrollTriggers
 
-  const controls2 = useAnimation();
-  const ref2 = useRef(null);
-  const inView2 = useInView(ref2, { once: true });
-  if (inView2) {
-    controls2.start("visible");
-  }
+        if (window.innerWidth < 1000) {
+          window.gsap.to(".card", {
+            transform: "translateX(-220%)",
+            scrollTrigger: {
+              trigger: ".AboutSection",
+              scroller: "body",
+              start: "top top",
+              end: "top -100%",
+              scrub: 1,
+              pin: true,
+              markers: true 
+            },
+          });
+        }
+      }
+    };
 
-  const controls3 = useAnimation();
-  const ref3 = useRef(null);
-  const inView3 = useInView(ref3, { once: true });
-  if (inView3) {
-    controls3.start("visible");
-  }
+    // Apply ScrollTrigger effect
+    applyScrollTrigger();
+
+    // Add resize event listener
+    const handleResize = () => {
+      if (window.innerWidth < 1000) {
+        window.location.reload();
+      } else {
+        applyScrollTrigger();
+      }
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    // Cleanup event listener on unmount
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, [scriptsLoaded]);
+  
 
   return (
-    <div className="aboutUs">
-      <motion.div
-        className="row featurette"
-        ref={ref1}
-        variants={{
-          hidden: { opacity: 0.8, x: -200 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        initial="hidden"
-        animate={controls1}
-        transition={{ duration: 1 }}
-      >
-        <div className="col-md-7 content left">
-          <h2 className="featurette-heading fw-normal lh-1">RoboVITics</h2>
-          {width < 1000 ? (
-            <p className="lead">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-              et dolorem earum vel maxime neque.
-            </p>
-          ) : (
-            <p className="lead">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sit sint
-              tempora voluptatum omnis iste mollitia officiis esse maxime
-              ducimus cum fugit voluptatem earum, eveniet, cupiditate similique
-              veniam architecto distinctio porro!
-            </p>
+    <div className='AboutSection' style={{height:"100vh", width:"100vw",alignItems:"center",alignContent:"center"}}>
+      <div className="cont">
+        <div
+          id="first"
+          className="card"
+          onMouseEnter={() => handleMouseEnter("first")}
+          onMouseLeave={handleMouseLeave}
+        >
+          {getCardContent(
+            "first",
+            logo,
+            <div className="expanded-content">
+              <img src={AboutImage} alt="About" className="expanded-image" />
+              <p className="expanded-text">
+                We, RoboVITics - The official club of VIT, are a collection of
+                vehement tech enthusiasts with the aspiration to learn and hone
+                our skills & the drive to excel. As the official robotics club of
+                VIT Vellore, our motto is to support aspiring robotics enthusiasts
+                in working on jaw-dropping projects and discovering their
+                specialities by holding numerous interactive workshops, seminars,
+                and practical sessions. We work together on some remarkable
+                projects and support exemplary teams that have received numerous
+                accolades.
+              </p>
+            </div>
           )}
         </div>
-        <div className="col-md-5 right aboutImage">
-          <img src={batch} alt="" />
-        </div>
-      </motion.div>
-      <motion.div
-        className="row featurette robowars-desp"
-        ref={ref2}
-        variants={{
-          hidden: { opacity: 0.8, x: 200 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        initial="hidden"
-        animate={controls2}
-        transition={{ duration: 1 }}
-      >
-        <div className="col-md-7 order-md-2 content leftText">
-          <h2 className="featurette-heading fw-normal lh-1 ">RoboWars</h2>
-          {width < 1000 ? (
-            <p className="lead">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-              et dolorem earum vel maxime neque.
-            </p>
-          ) : (
-            <p className="lead">
-              Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-              Distinctio id vel aliquam accusantium eveniet non deleniti animi,
-              iure ad magni officia architecto repellendus placeat debitis ullam
-              amet! Error, dolorem eligendi!
-            </p>
+        <div
+          id="second"
+          className="card"
+          onMouseEnter={() => handleMouseEnter("second")}
+          onMouseLeave={handleMouseLeave}
+        >
+          {getCardContent(
+            "second",
+            warLogo,
+            <div>
+              <h2>Second Card</h2>
+              <p>This is the content for the second card.</p>
+            </div>
           )}
         </div>
-        <div className="col-md-5 order-md-1 leftImage aboutImage">
-          <img src={arena} alt="" />
-        </div>
-      </motion.div>
-      <motion.div
-        className="row featurette gravitas-desp"
-        ref={ref3}
-        variants={{
-          hidden: { opacity: 0.8, x: -200 },
-          visible: { opacity: 1, x: 0 },
-        }}
-        initial="hidden"
-        animate={controls3}
-        transition={{ duration: 1 }}
-      >
-        <div className="col-md-7 content left">
-          <h2 className="featurette-heading fw-normal lh-1">GraVITas</h2>
-          {width < 1000 ? (
-            <p className="lead">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Placeat
-              et dolorem earum vel maxime neque.
-            </p>
-          ) : (
-            <p className="lead">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora
-              sunt asperiores vel nulla, dicta tenetur nostrum quam iusto
-              laboriosam, nobis nihil minus hic magnam enim! Ipsum earum omnis
-              nostrum natus?
-            </p>
+        <div
+          id="third"
+          className="card"
+          onMouseEnter={() => handleMouseEnter("third")}
+          onMouseLeave={handleMouseLeave}
+        >
+          {getCardContent(
+            "third",
+            GravLogo,
+            <div>
+              <h2>Third Card</h2>
+              <p>This is the content for the third card.</p>
+            </div>
           )}
         </div>
-        <div className="col-md-5 right aboutImage">
-          <img src={place} alt="" />
-        </div>
-      </motion.div>
+      </div>
     </div>
   );
-};
-
-export default About;
+}

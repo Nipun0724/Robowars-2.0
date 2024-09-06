@@ -1,4 +1,4 @@
-import React, { useRef, useState } from "react";
+import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import "./Gallery.css";
 import pub4 from "../../assets/publication4.jpg";
@@ -13,19 +13,21 @@ const Gallery = () => {
   const controls = useAnimation();
   const ref = useRef(null);
   const inView = useInView(ref, { once: true });
+
   if (inView) {
     controls.start("visible");
   }
 
-  const handleClick = (index) => {
-    const newPositions = [...positions];
-    const heroIndex = newPositions.indexOf(0);
-    [newPositions[heroIndex], newPositions[index]] = [
-      newPositions[index],
-      newPositions[heroIndex],
-    ];
-    setPositions(newPositions);
-  };
+  useEffect(() => {
+    const interval = setInterval(() => {
+      const newPositions = [...positions];
+      const last = newPositions.pop(); // Remove the last element
+      newPositions.unshift(last); // Add it to the beginning
+      setPositions(newPositions);
+    }, 3000); // Change image every 2 seconds
+
+    return () => clearInterval(interval); // Cleanup interval on unmount
+  }, [positions]);
 
   return (
     <>
@@ -46,7 +48,15 @@ const Gallery = () => {
               key={index}
               className="item"
               data-pos={pos}
-              onClick={() => handleClick(index)}
+              onClick={() => setPositions((prevPositions) => {
+                const newPositions = [...prevPositions];
+                const heroIndex = newPositions.indexOf(0);
+                [newPositions[heroIndex], newPositions[index]] = [
+                  newPositions[index],
+                  newPositions[heroIndex],
+                ];
+                return newPositions;
+              })}
             >
               <img src={images[index]} alt={`Gallery item ${index}`} />
             </div>
