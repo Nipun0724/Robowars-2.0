@@ -1,44 +1,60 @@
 import React from "react";
 
 const Card = ({ data }) => {
+  // Ensure that `data`, `team1`, and `team2` exist before trying to access their properties
+  if (!data || !data.team1 || !data.team2) {
+    return <p>Loading...</p>; // Or some other fallback UI
+  }
+
   return (
-    <li class="tournament-bracket__item">
-      <div class="tournament-bracket__match" tabindex="0">
-        <table class="tournament-bracket__table">
-          <caption class="tournament-bracket__caption">
-            <time datetime="1998-02-18">{data.date}</time>
+    <li className="tournament-bracket__item">
+        
+       
+      <div className="tournament-bracket__match" tabIndex="0">
+      
+        <table className="tournament-bracket__table">
+        <div className="header">
+            <p>Match1</p>
+            <time dateTime={data.date || "1998-02-18"}>
+              {data.date || "Date not available"}
+            </time>
+            <div className="line"></div>
+        </div>
+        <br></br>
+          <caption className="tournament-bracket__caption">
+           
           </caption>
 
-          <tbody class="tournament-bracket__content">
-            <tr class="tournament-bracket__team tournament-bracket__team--winner">
-              <td class="tournament-bracket__country">
-                <abbr class="tournament-bracket__code" title="Canada">
-                  {data.team1.team_code}
+          <tbody className="tournament-bracket__content">
+            <tr className="tournament-bracket__team tournament-bracket__team--winner">
+              <td className="tournament-bracket__country">
+                <abbr className="tournament-bracket__code" title="Canada">
+                  {data.team1.team_code || "T1"}
                 </abbr>
                 <span
-                  class="tournament-bracket__flag flag-icon flag-icon-ca"
+                  className="tournament-bracket__flag flag-icon flag-icon-ca"
                   aria-label="Flag"
                 ></span>
               </td>
-              <td class="tournament-bracket__score">
-                <span class="tournament-bracket__number">
-                  <img src={data.team1.team_icon} alt="" />
+              <td className="tournament-bracket__score">
+                <span className="tournament-bracket__number">
+                  <img src={data.team1.team_icon || ""} alt="Team 1" />
                 </span>
               </td>
             </tr>
-            <tr class="tournament-bracket__team">
-              <td class="tournament-bracket__country">
-                <abbr class="tournament-bracket__code" title="Kazakhstan">
-                  {data.team2.team_code}
+            <tr className="tournament-bracket__team">
+              <td className="tournament-bracket__country">
+                <abbr className="tournament-bracket__code" title="Kazakhstan">
+                  {data.team2.team_code || "T2"}
                 </abbr>
                 <span
-                  class="tournament-bracket__flag flag-icon flag-icon-kz"
+                  className="tournament-bracket__flag flag-icon flag-icon-kz"
                   aria-label="Flag"
                 ></span>
               </td>
-              <td class="tournament-bracket__score">
-                <span class="tournament-bracket__number">
-                  <img src={data.team2.team_icon} alt="" />
+              <td className="tournament-bracket__score">
+                <span className="tournament-bracket__number">
+                  <img src={data.team2.team_icon || ""} alt="Team 2" />
                 </span>
               </td>
             </tr>
