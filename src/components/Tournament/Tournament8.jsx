@@ -1,7 +1,16 @@
 import React from "react";
 import Card from "./Card";
 
-const Tournament15 = ({ data }) => {
+const Tournament8 = ({ data }) => {
+  if (!data || data.length === 0) {
+    return (
+      <div class="d-flex justify-content-center" style={{ marginTop: "20%" }}>
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Loading...</span>
+        </div>
+      </div>
+    );
+  }
   return (
     <div>
       {!data ? (
@@ -79,4 +88,4 @@ const Tournament15 = ({ data }) => {
   );
 };
 
-export default Tournament15;
+export default Tournament8;
