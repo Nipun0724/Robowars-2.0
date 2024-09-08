@@ -1,29 +1,23 @@
 import React from "react";
 
 const Card = ({ data }) => {
-  // Ensure that `data`, `team1`, and `team2` exist before trying to access their properties
   if (!data || !data.team1 || !data.team2) {
-    return <p>Loading...</p>; // Or some other fallback UI
+    return null; // Just return null or some placeholder if data is missing
   }
 
   return (
     <li className="tournament-bracket__item">
-        
-       
       <div className="tournament-bracket__match" tabIndex="0">
-      
         <table className="tournament-bracket__table">
-        <div className="header">
+          <div className="header">
             <p>Match1</p>
             <time dateTime={data.date || "1998-02-18"}>
               {data.date || "Date not available"}
             </time>
             <div className="line"></div>
-        </div>
-        <br></br>
-          <caption className="tournament-bracket__caption">
-           
-          </caption>
+          </div>
+          <br></br>
+          <caption className="tournament-bracket__caption"></caption>
 
           <tbody className="tournament-bracket__content">
             <tr className="tournament-bracket__team tournament-bracket__team--winner">

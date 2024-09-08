@@ -10,7 +10,7 @@ import { Route, Routes, useLocation } from "react-router-dom";
 import Tournament from "./components/Tournament/Tournament";
 import Tournament15 from "./components/Tournament/Tournament15";
 import Tournament60 from "./components/Tournament/Tournament60";
-import { motion, useAnimation } from 'framer-motion'
+import { motion, useAnimation } from "framer-motion";
 import { useEffect } from "react";
 
 function App() {
@@ -45,22 +45,6 @@ function App() {
           element={
             <div>
               <Tournament />
-            </div>
-          }
-        />
-         <Route
-          path="/Tournament15"
-          element={
-            <div>
-              <Tournament15/>
-            </div>
-          }
-        />
-         <Route
-          path="/tournament60"
-          element={
-            <div>
-              <Tournament60/>
             </div>
           }
         />
