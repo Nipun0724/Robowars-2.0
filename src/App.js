@@ -7,7 +7,7 @@ import Gallery from "./components/Gallery/Gallery";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Categories from "./components/Categories/Categories";
 
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Tournament from "./components/Tournament/Tournament";
 
 
