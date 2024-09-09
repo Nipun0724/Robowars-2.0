@@ -6,7 +6,7 @@
   justify-content: flex-start;
   align-items: stretch;
   border-radius: 60px;
-  box-shadow: 0px 0px 20px #000;
+  box-shadow: 0px 0px 20px #e55e04;
   overflow: hidden;
 }
 .bar-contain {
@@ -17,12 +17,12 @@
 }
 .bar {
   width: 0%;
-  background: rgb(102, 67, 181);
+  background: rgb(198, 82, 10);
   background: linear-gradient(
     180deg,
-    rgba(102, 67, 181, 1) 0%,
-    rgba(102, 66, 178, 1) 32%,
-    rgba(012, 25, 101, 1) 100%
+    rgb(247, 116, 2) 0%,
+    rgb(247, 116, 2) 32%,
+    rgb(247, 116, 2) 100%
   );
 }
 
@@ -30,7 +30,7 @@
   height: 100vh;
   display: grid;
   place-content: center;
-  background-color: #000;
+  background-color: #000000;
 }
 
 .progressbar-container h3 {
@@ -43,7 +43,7 @@
 }
 
 .progressbar-container #three-container {
-  background-color: #000;
+  background-color: #000000;
   width: 100%;
   margin-top: -490px;
 }
