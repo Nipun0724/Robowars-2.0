@@ -6,14 +6,26 @@ import Navbar from "./components/Navbar/Navbar";
 import Gallery from "./components/Gallery/Gallery";
 import Sponsors from "./components/Sponsors/Sponsors";
 import Categories from "./components/Categories/Categories";
-import { Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import Tournament from "./components/Tournament/Tournament";
-import Tournament15 from "./components/Tournament/Tournament15";
-import Tournament60 from "./components/Tournament/Tournament60";
-import { motion, useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import Loadingpage from "./components/Loadingpage/Loadingpage";
+import { useAnimation } from "framer-motion";
+import { useEffect, useState } from "react";
 
 function App() {
+  const [a, setA] = useState(100);
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    if (a) {
+      setTimeout(() => {
+        setA(a - 1);
+      }, 20);
+    } else {
+      setTimeout(() => {
+        setLoading(false);
+      }, 1500);
+    }
+  }, [a]);
   const controls = useAnimation();
   useEffect(() => {
     // This will ensure controls.start() is called only after the component has mounted
@@ -23,21 +35,25 @@ function App() {
     });
   }, [controls]);
   return (
-    <div className="App" style={{ overflowX: "hidden" }}>
+    <div className="App" style={{ overflowX: "hidden", height: "100vh" }}>
       <Routes>
         <Route
           path="/"
           element={
-            <div>
-              <Navbar />
-              <HeroSection />
-              <About />
-              <Categories />
-              <Gallery />
-              <FAQ />
-              <Sponsors />
-              <Contact />
-            </div>
+            loading ? (
+              <Loadingpage value={100 - a} />
+            ) : (
+              <div>
+                <Navbar />
+                <HeroSection />
+                {/* <About /> */}
+                <Categories />
+                <Gallery />
+                <FAQ />
+                <Sponsors />
+                <Contact />
+              </div>
+            )
           }
         />
         <Route
