@@ -78,20 +78,20 @@ const Contact = () => {
               >
                 
                 
-                <div className="tw-bg-[#27074d] tw-rounded-2xl tw-h-100 tw-shadow-sm tw-shadow-[#27074d] tw-px-1.5 tw-pt-0 tw-pb-[-1rem] tw-m-0">
+                <div className="tw-bg-[#d64e2e] tw-rounded-2xl tw-h-100 tw-shadow-sm tw-shadow-[#d64e2e] tw-px-1.5 tw-pt-0 tw-pb-[-1rem] tw-m-0">
                   <div className="tw-relative tw-flex tw-justify-center tw-items-center tw-h-52 tw-w-78 tw-px-20 tw-py-0 tw-bg-neutral-900 tw-rounded-2xl tw-outline tw-outline-slate-400 tw--outline-offset-8 tw-origin-bottom-right tw-overflow-hidden tw-mt-[-1rem] tw-mb-[0rem] tw-transition tw-duration-500 hover:tw-rotate-12
-  before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#27074d] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
-  after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#27074d] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
+  before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#d64e2e] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
+  after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#d64e2e] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
     <div className="tw-z-10 tw-flex tw-flex-col tw-items-center tw-gap-2">
-      <span className="tw-text-slate-400 tw-text-4xl tw-font-bold">ARYAN <br /> BHARUKA </span>
+      <span className="tw-text-[#ffffff] tw-text-4xl tw-font-bold">ARYAN <br /> BHARUKA </span>
       <p className="tw-text-gray-50">Chair person<br />Ph : 9518761640</p>
     </div>
   </div>
   <div className="tw-relative tw-flex tw-justify-center tw-items-center tw-p-5 tw-h-52 tw-w-78 tw-bg-neutral-900 tw-rounded-2xl tw-outline tw-outline-slate-400 tw--outline-offset-8 tw-origin-bottom-right tw-overflow-hidden tw-mb-[1rem] tw-transition tw-duration-500 hover:tw-rotate-12
-    before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#27074d] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
-    after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#27074d] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
+    before:tw-absolute before:tw-w-20 before:tw-h-20 before:tw-bg-[#d64e2e] before:tw-rounded-full before:tw-blur-xl before:tw-top-20 before:tw-right-16 before:tw-transition before:tw-duration-500 hover:before:tw-translate-y-12 hover:before:tw--translate-x-32
+    after:tw-absolute after:tw-w-24 after:tw-h-24 after:tw-bg-[#d64e2e] after:tw-rounded-full after:tw-blur-xl after:tw-bottom-32 after:tw-right-16 after:tw-transition after:tw-duration-500 hover:after:tw-translate-x-24">
     <div className="tw-z-10 tw-flex tw-flex-col tw-items-center tw-gap-2">
-      <span className="tw-text-slate-400 tw-text-4xl tw-font-bold">ANIRUDDH <br /> CHOWDHURY </span>
+      <span className="tw-text-[#ffffff] tw-text-4xl tw-font-bold">ANIRUDDH <br /> CHOWDHURY </span>
       <p className="tw-text-gray-50">Vice Chair Person<br />Ph : 7977957614</p>
     </div>
   </div>

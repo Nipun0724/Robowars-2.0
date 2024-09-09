@@ -42,7 +42,7 @@ const Navbar = () => {
   return (
     <div id="home">
       <motion.nav
-        class="navbar navbar-expand-lg navbar-dark fixed-top bg-none"
+        class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar"
         id="nav"
         ref={ref}
         variants={{
@@ -67,8 +67,16 @@ const Navbar = () => {
         style={
           window.innerWidth < 1000
             ? { padding: 0 }
-            : { paddingTop: "20px", backgroundColor: "rgb(0, 0, 0)" }
+            : {
+                paddingTop: "20px",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",  
+                backdropFilter: "blur(20px)",                 
+                WebkitBackdropFilter: "blur(20px)",           
+                
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)"     
+              }
         }
+        
       >
         <div class="container-fluid">
           <button
@@ -117,7 +125,7 @@ const Navbar = () => {
               </li>
               <li class="nav-item">
                 <Link to="#home" class="link last">
-                  <img src={gravitas} alt="" style={{ marginTop: "-25px" }} />
+                  <img src={gravitas} alt="" style={{right:0, marginTop: "-25px" }} />
                 </Link>
               </li>
             </ul>

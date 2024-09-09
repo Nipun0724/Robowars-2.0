@@ -12,6 +12,7 @@ import Loadingpage from "./components/Loadingpage/Loadingpage";
 import { useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 
+
 function App() {
   const [a, setA] = useState(100);
   const [loading, setLoading] = useState(true);
