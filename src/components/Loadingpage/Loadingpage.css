@@ -6,7 +6,7 @@
   justify-content: flex-start;
   align-items: stretch;
   border-radius: 60px;
-  box-shadow: 0px 0px 20px #000;
+  box-shadow: 0px 0px 20px #d74b06;
   overflow: hidden;
 }
 .bar-contain {
@@ -17,12 +17,12 @@
 }
 .bar {
   width: 0%;
-  background: rgb(102, 67, 181);
+  background: rgb(225, 104, 12);
   background: linear-gradient(
     180deg,
-    rgba(102, 67, 181, 1) 0%,
-    rgba(102, 66, 178, 1) 32%,
-    rgba(012, 25, 101, 1) 100%
+    rgb(225, 104, 12) 0%,
+    rgb(225, 104, 12) 32%,
+    rgb(225, 104, 12) 100%
   );
 }
 

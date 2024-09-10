@@ -49,10 +49,10 @@ const Progressbar = ({ value }) => {
 
         camera.position.set(0, 2 * 2, 5 * 2);
 
-        const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+        const ambientLight = new THREE.AmbientLight(0xFFA500, 1);
         scene.add(ambientLight);
 
-        const directionalLight = new THREE.DirectionalLight(0xffffff, 2);
+        const directionalLight = new THREE.DirectionalLight(0xFFA500, 2);
         directionalLight.position.set(0, 1, 0);
         scene.add(directionalLight);
 

@@ -1,42 +1,93 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import './HeroSection.css';
-import roboviticsLogo from '../../assets/robovitics.png';
-import robowarsLogo from '../../assets/robowars logo.png';
-import robotImage from '../../assets/ei_1708888489476-removebg-preview.png';
 import { useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import * as THREE from "three";
+import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const HeroSection = () => {
-  const navigate = useNavigate(); // For navigation to the tournament page
+  const navigate = useNavigate();
+  const threeContainerRef = useRef(null);
 
   const handleMatchesClick = () => {
-    navigate('/tournament'); // Navigate to the tournament page
+    navigate('/tournament');
   };
 
+  useEffect(() => {
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    const renderer = new THREE.WebGLRenderer({ alpha: true });
+    renderer.setSize(400, 400);
+    document.getElementById("three-robot-model").appendChild(renderer.domElement);
+
+    const loader = new GLTFLoader();
+    loader.load("Asset 1.gltf", (gltf) => {
+      const model = gltf.scene;
+      model.rotation.y = Math.PI / 4;
+
+      model.scale.set(0.22, 0.22, 0.22); 
+      scene.add(model);
+
+      const controls = new OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.05;
+      controls.enableZoom = false;
+      controls.maxPolarAngle = Math.PI / 2;
+
+      camera.position.set(0, 1, 5);
+
+      const ambientLight = new THREE.AmbientLight(0xffffff, 1);
+      scene.add(ambientLight);
+
+      const directionalLight = new THREE.DirectionalLight(0xff8c00, 2);
+      directionalLight.position.set(0, 10, 10).normalize();
+      scene.add(directionalLight);
+
+      const animate = () => {
+        requestAnimationFrame(animate);
+        model.rotation.y += 0.01;
+        renderer.render(scene, camera);
+      };
+
+      animate();
+    });
+
+    const handleResize = () => {
+      const newWidth = 400;
+      const newHeight = 400;
+      camera.aspect = newWidth / newHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(newWidth, newHeight);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+      const threeContainer = document.getElementById("three-robot-model");
+      if (threeContainer && threeContainer.contains(renderer.domElement)) {
+        threeContainer.removeChild(renderer.domElement);
+      }
+    };
+  }, []);
+
   return (
-    <motion.div
-      className="hero-section"
-      initial={{ opacity: 0 }} // Initial animation state (hidden)
-      animate={{ opacity: 1 }} // Final animation state (visible)
-      transition={{ duration: 1 }} // Animation duration of 1 second
-    >
-      <div className="content-wrapper">
+    <motion.div className="hero-section">
+      <div>
         <div className="title">
           <h1 className="herologo">ROBOWARS</h1>
-          <img src={robowarsLogo} alt="Robowars Logo" />
         </div>
-        <div className="content">
-          <img src={robotImage} alt="Robot Image" />
-          <h2>
-            FORGE<div>.</div>BATTLE<div>.</div>WRECK
-          </h2>
-          <p>
-            EXPERIENCE THE THRILL OF COMBAT ROBOTICS AT ROBOWARS. REGISTER NOW TO BOOK YOUR SEAT AND WITNESS THE CLASH OF ROBOTS
-          </p>
-          <div className="buttons">
-            <button className="watch-live">Watch Live</button>
-            <button className="matches">Matches</button>
-          </div>
+        <div id="three-robot-model" ref={threeContainerRef}></div>
+      </div>
+      <div className="content">
+        <h2>FORGE<div>.</div>BATTLE<div>.</div>WRECK</h2>
+        <p>
+          EXPERIENCE THE THRILL OF COMBAT ROBOTICS AT ROBOWARS. REGISTER NOW TO BOOK YOUR SEAT AND WITNESS THE CLASH OF ROBOTS.
+        </p>
+        <div className="buttons">
+          <button className="watch-live">Watch Live</button>
+          <button className="matches" onClick={handleMatchesClick}>Matches</button>
         </div>
       </div>
     </motion.div>
