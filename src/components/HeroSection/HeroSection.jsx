@@ -22,11 +22,11 @@ const HeroSection = () => {
     document.getElementById("three-robot-model").appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load("Asset 1.gltf", (gltf) => {
+    loader.load("ROBOWARSmainLOGO.glb", (gltf) => {
       const model = gltf.scene;
       model.rotation.y = Math.PI / 4;
 
-      model.scale.set(0.22, 0.22, 0.22); 
+      model.scale.set(1.3, 1.3, 1.3); 
       scene.add(model);
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -46,7 +46,7 @@ const HeroSection = () => {
 
       const animate = () => {
         requestAnimationFrame(animate);
-        model.rotation.y += 0.01;
+        model.rotation.y += 0.005;
         renderer.render(scene, camera);
       };
 
