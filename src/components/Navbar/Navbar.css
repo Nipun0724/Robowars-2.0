@@ -1,11 +1,9 @@
-
 .navbar {
-  background: rgb(255, 255, 255,0.1);
+  background: rgb(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(10px);
-  color:white;
+  color: white;
 }
-
 
 .nav-item {
   margin-left: 1rem;
