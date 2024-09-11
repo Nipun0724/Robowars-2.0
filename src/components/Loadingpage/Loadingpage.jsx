@@ -1,112 +1,31 @@
-import { motion, animate, useInView, useAnimation } from "framer-motion";
+import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useRef } from "react";
-import * as THREE from "three";
-import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import "./Loadingpage.css";
 
 const Progressbar = ({ value }) => {
-  const threeContainerRef = useRef(null);
   const progressRef = useRef(null);
   const controls = useAnimation();
-  let animationId;
-
-  //   if (value === 100) {
-  //     setTimeout(() => {
-  //       controls.start("fading");
-  //     }, 500);
-  //   }
 
   useEffect(() => {
-    const scene = new THREE.Scene();
-    scene.background = new THREE.Color("#000");
-    const camera = new THREE.PerspectiveCamera(
-      75,
-      window.innerWidth / window.innerHeight,
-      0.1,
-      1000
-    );
-    const renderer = new THREE.WebGLRenderer();
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    document.getElementById("three-container").appendChild(renderer.domElement);
-
-    const loader = new GLTFLoader();
-    loader.load(
-      "Asset 1.gltf",
-      (gltf) => {
-        const model = gltf.scene;
-
-        model.rotation.x = -0.23;
-        model.rotation.y = 0;
-        model.rotation.z = 0;
-
-        if (window.innerWidth < 500) {
-          model.scale.set(0.2, 0.2, 0.2);
-        } else {
-          model.scale.set(0.3, 0.3, 0.3);
-        }
-
-        scene.add(model);
-
-        camera.position.set(0, 2 * 2, 5 * 2);
-
-        const ambientLight = new THREE.AmbientLight(0xFFA500, 1);
-        scene.add(ambientLight);
-
-        const directionalLight = new THREE.DirectionalLight(0xFFA500, 2);
-        directionalLight.position.set(0, 1, 0);
-        scene.add(directionalLight);
-
-        const animate = function () {
-          animationId = requestAnimationFrame(animate);
-
-          model.rotation.y += 0.01;
-
-          renderer.render(scene, camera);
-        };
-
-        renderer.setSize(
-          threeContainerRef.current.clientWidth,
-          threeContainerRef.current.clientHeight
-        );
-
-        const handleResize = () => {
-          const newWidth = window.innerWidth;
-          const newHeight = window.innerHeight;
-
-          camera.aspect = newWidth / newHeight;
-          camera.updateProjectionMatrix();
-
-          renderer.setSize(newWidth, newHeight);
-        };
-
-        window.addEventListener("resize", handleResize);
-        animate();
-
-        return () => {
-          window.removeEventListener("resize", handleResize);
-          document
-            .getElementById("three-container")
-            .removeChild(renderer.domElement);
-        };
-      },
-      undefined
-    );
-  }, []);
+    if (value === 100) {
+      controls.start("fading"); // Start fade-out animation
+    }
+  }, [value, controls]);
 
   return (
     <motion.div
       className="progressbar-container"
       ref={progressRef}
       variants={{
-        fading: { opacity: 0 },
+        fading: { opacity: 0, y: "100%" }, // Fade out and slide down
       }}
       initial={{
         opacity: 1,
+        y: 0,
       }}
       animate={controls}
-      transition={{ duration: 1 }}
+      transition={{ duration: 1, ease: "easeInOut" }}
     >
-      <div id="three-container" ref={threeContainerRef}></div>
       <div
         style={{
           display: "flex",
@@ -119,14 +38,14 @@ const Progressbar = ({ value }) => {
           <motion.div
             className="bar"
             animate={{
-              width: `${value}%`,
+              width: `${value}%`, // Animate width based on the progress value
             }}
             transition={{
-              ease: "linear",
+              ease: "linear", // Smooth linear transition
             }}
           />
         </div>
-        <div className="percent">{value}%</div>
+        <div className="loading-text">L o a d i n g</div>
       </div>
     </motion.div>
   );
