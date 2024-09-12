@@ -18,7 +18,7 @@ const HeroSection = () => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(400, 400);
+    renderer.setSize(500, 500);  // Increased the size to match the larger container
     document.getElementById("three-robot-model").appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
@@ -26,7 +26,7 @@ const HeroSection = () => {
       const model = gltf.scene;
       model.rotation.y = Math.PI / 4;
 
-      model.scale.set(1.3, 1.3, 1.3); 
+      model.scale.set(1.6, 1.6, 1.6); // Increased the model size
       scene.add(model);
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -35,7 +35,7 @@ const HeroSection = () => {
       controls.enableZoom = false;
       controls.maxPolarAngle = Math.PI / 2;
 
-      camera.position.set(0, 0, 4.5); 
+      camera.position.set(0, 0, 5.5);
 
       const ambientLight = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambientLight);
@@ -54,8 +54,8 @@ const HeroSection = () => {
     });
 
     const handleResize = () => {
-      const newWidth = 400;
-      const newHeight = 400;
+      const newWidth = 500;
+      const newHeight = 500;
       camera.aspect = newWidth / newHeight;
       camera.updateProjectionMatrix();
       renderer.setSize(newWidth, newHeight);
