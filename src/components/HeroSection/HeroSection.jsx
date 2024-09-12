@@ -35,7 +35,7 @@ const HeroSection = () => {
       controls.enableZoom = false;
       controls.maxPolarAngle = Math.PI / 2;
 
-      camera.position.set(0, 1, 5);
+      camera.position.set(0, 0, 4.5); 
 
       const ambientLight = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambientLight);
