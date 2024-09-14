@@ -2,24 +2,71 @@
   display: flex;
   justify-content: space-evenly;
 }
+
 .robot1,
 .robot2,
 .robot3 {
   width: 35%;
   height: 80vh;
 }
+
 .categories-heading {
   text-align: center;
 }
+
 @media only screen and (max-width: 768px) {
   .categories {
     display: flex;
     flex-direction: column;
+    align-items: center; /* Center align the columns */
   }
   .robot1,
   .robot2,
   .robot3 {
-    width: 100%;
-    height: 50vh;
+    width: 70%; /* Adjust the width for better fit on mobile */
+    height: 50vh; /* Adjust height if necessary */
+    margin-bottom: 20px; /* Add spacing between items */
   }
+  #three-container,
+  #three-container1 {
+    margin-top: -520px;
+    margin-bottom: -10px;
+  }
+  #three-container {
+    margin-bottom: -20px;
+  }
+}
+
+.robot-container {
+  /* Ensure there's enough space for the 3D models */
+}
+
+#three-container,
+#three-container1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: -150px;
+  margin-bottom: -130px;
+}
+
+#three-container1 {
+  margin-left: -400px;
+}
+
+#three-container {
+  margin-bottom: -135px;
+}
+
+.robot-container h2 {
+  margin-left: 45%;
+  padding-top: 10%;
+}
+
+.white-container {
+  width: 100%;
+  height: 100%;
+  background-image: url("../../assets/frame.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }

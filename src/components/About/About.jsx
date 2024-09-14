@@ -94,7 +94,14 @@ export default function AboutUs() {
             logo,
             <div className="expanded-content">
               <img src={AboutImage} alt="About" className="expanded-image" />
-              <p className="expanded-text">
+              {window.innerWidth<600 ? (
+                <p className="expanded-text">
+                We, RoboVITics - The official club of VIT, are a collection of
+                vehement tech enthusiasts with the aspiration to learn and hone
+                our skills & 
+              </p>
+              ):(
+                <p className="expanded-text">
                 We, RoboVITics - The official club of VIT, are a collection of
                 vehement tech enthusiasts with the aspiration to learn and hone
                 our skills & the drive to excel. As the official robotics club of
@@ -105,6 +112,7 @@ export default function AboutUs() {
                 projects and support exemplary teams that have received numerous
                 accolades.
               </p>
+              )}
             </div>
           )}
         </div>
@@ -120,7 +128,14 @@ export default function AboutUs() {
             warLogo,
             <div className="expanded-content">
               <img src={AboutImage} alt="About" className="expanded-image" />
-              <p className="expanded-text">
+              {window.innerWidth<600 ? (
+                <p className="expanded-text">
+                We, RoboVITics - The official club of VIT, are a collection of
+                vehement tech enthusiasts with the aspiration to learn and hone
+                our skills & 
+              </p>
+              ):(
+                <p className="expanded-text">
                 We, RoboVITics - The official club of VIT, are a collection of
                 vehement tech enthusiasts with the aspiration to learn and hone
                 our skills & the drive to excel. As the official robotics club of
@@ -131,6 +146,7 @@ export default function AboutUs() {
                 projects and support exemplary teams that have received numerous
                 accolades.
               </p>
+              )}
             </div>
           )}
         </div>
@@ -146,7 +162,14 @@ export default function AboutUs() {
             GravLogo,
             <div className="expanded-content">
                <img src={AboutImage} alt="About" className="expanded-image" />
-              <p className="expanded-text">
+               {window.innerWidth<600 ? (
+                <p className="expanded-text">
+                We, RoboVITics - The official club of VIT, are a collection of
+                vehement tech enthusiasts with the aspiration to learn and hone
+                our skills & 
+              </p>
+              ):(
+                <p className="expanded-text">
                 We, RoboVITics - The official club of VIT, are a collection of
                 vehement tech enthusiasts with the aspiration to learn and hone
                 our skills & the drive to excel. As the official robotics club of
@@ -157,6 +180,7 @@ export default function AboutUs() {
                 projects and support exemplary teams that have received numerous
                 accolades.
               </p>
+              )}
             </div>
           )}
           
