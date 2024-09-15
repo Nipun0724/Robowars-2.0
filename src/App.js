@@ -47,7 +47,7 @@ function App() {
               <div>
                 <Navbar />
                 <HeroSection />
-                {/* <About /> */}
+                <About />
                 <Categories />
                 <Gallery />
                 <FAQ />
