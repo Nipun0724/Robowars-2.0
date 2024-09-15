@@ -11,6 +11,9 @@ import Tournament from "./components/Tournament/Tournament";
 import Loadingpage from "./components/Loadingpage/Loadingpage";
 import { useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
+import CursorTrail from "./components/Cursoranimation/Cursoranimation"; 
+
+
 
 
 function App() {
@@ -36,7 +39,10 @@ function App() {
     });
   }, [controls]);
   return (
+   
     <div className="App" style={{ overflowX: "hidden", height: "100vh" }}>
+       {!loading && <CursorTrail />}
+  
       <Routes>
         <Route
           path="/"

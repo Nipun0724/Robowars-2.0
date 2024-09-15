@@ -1,3 +1,14 @@
+.navbar-toggler-icon {
+  display: inline-block;
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: middle;
+  background-image: var(--bs-navbar-toggler-icon-bg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+  background-color: rgba(128, 128, 128, 0.7); 
+}
 .navbar {
   background: rgb(255, 255, 255, 0.1);
   backdrop-filter: blur(5px);
@@ -37,7 +48,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.9); /* Translucent background */
+ /* Translucent background */
     z-index: 1000;
     display: flex;
     flex-direction: column;
@@ -47,16 +58,27 @@
     transform: translateY(-100%); /* Initially hidden */
     opacity: 0;
   }
+  .navbar-collapse ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 300px;
+    margin-bottom: 100px; /* Directly below the hamburger menu */
+    background-color: rgba(128, 128, 128, 0.7); 
+    margin-left: -30px;/* Grey transparent background */
+    
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+  }
 
   .navbar-collapse.show {
-    transform: translateY(0); /* Slide down */
+    transform: translateY(100%); /* Slide down */
     opacity: 1;
   }
 
   .navbar-nav {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.6rem;
     align-items: center;
     margin-left: 17%;
   }
