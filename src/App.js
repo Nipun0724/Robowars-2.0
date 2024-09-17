@@ -17,8 +17,18 @@ import CursorTrail from "./components/Cursoranimation/Cursoranimation";
 
 
 function App() {
+  const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1000);
+  
   const [a, setA] = useState(100);
   const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const handleResize = () => {
+      setIsLargeScreen(window.innerWidth >= 1000);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   useEffect(() => {
     if (a) {
       setTimeout(() => {
@@ -41,7 +51,7 @@ function App() {
   return (
    
     <div className="App" style={{ overflowX: "hidden", height: "100vh" }}>
-       {!loading && <CursorTrail />}
+          {!loading && isLargeScreen && <CursorTrail />}
   
       <Routes>
         <Route
