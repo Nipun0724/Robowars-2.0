@@ -15,10 +15,10 @@ const Progressbar = ({ value }) => {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     const renderer = new THREE.WebGLRenderer({ alpha: true });
     renderer.setSize(500, 500);  // Increased the size to match the larger container
-    document.getElementById("three-robot-model").appendChild(renderer.domElement);
+    document.getElementById("three-robot-model1").appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load("ROBOWARSmainLOGO.glb", (gltf) => {
+    loader.load("untitledhello3.gltf", (gltf) => {
       const model = gltf.scene;
       model.rotation.y = Math.PI / 4;
 
@@ -61,7 +61,7 @@ const Progressbar = ({ value }) => {
 
     return () => {
       window.removeEventListener("resize", handleResize);
-      const threeContainer = document.getElementById("three-robot-model");
+      const threeContainer = document.getElementById("three-robot-model1");
       if (threeContainer && threeContainer.contains(renderer.domElement)) {
         threeContainer.removeChild(renderer.domElement);
       }
@@ -96,7 +96,7 @@ const Progressbar = ({ value }) => {
         }}
         className="bar-contain"
       >
-                <div id="three-robot-model" ref={threeContainerRef}></div>
+        <div id="three-robot-model1" ref={threeContainerRef}></div>
         <div className="progressbar">
           <motion.div
             className="bar"

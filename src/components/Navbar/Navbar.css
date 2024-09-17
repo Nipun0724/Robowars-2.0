@@ -32,7 +32,11 @@
 }
 
 .navbar-nav {
+  display: flex;
   gap: 3vw;
+  align-items: center;
+  width: 100%;
+  justify-content: flex-start;
 }
 
 .no-wrap {
@@ -115,12 +119,22 @@
 
   .navbar-toggler:focus {
     outline: none;
-    box-shadow: none; /* Remove any box shadow if present */
+    box-shadow: none;
   }
 
   .last {
-    display: none; /* Hide gravitas logo */
+    margin-left: auto; 
+    display: flex;
+    justify-content: flex-end;
   }
+
+  @media (max-width: 1000px) {
+    .last {
+      display: none; 
+    }
+  }
+  
+  
 
   .link {
     font-size: 1.5rem;
