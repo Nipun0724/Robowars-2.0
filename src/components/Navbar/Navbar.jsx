@@ -90,45 +90,46 @@ const Navbar = () => {
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarCollapse">
-            <ul class="navbar-nav me-auto mb-2">
-              <li class="nav-item">
-                <Link to="#home" class="link">
-                  <img src={robovitics} alt="" />
-                </Link>
-              </li>
-              <li class="nav-item text-link">
-                <Link to="#hero" class="link no-wrap">
-                  Home
-                </Link>
-              </li>
-              <li class="nav-item text-link">
-                <Link to="#aboutUsSection" class="link no-wrap">
-                  About Us
-                </Link>
-              </li>
-              <li class="nav-item text-link">
-                <Link to="#categories" class="link no-wrap">
-                  Categories
-                </Link>
-              </li>
-              <li class="nav-item text-link">
-                <Link to="#faqsection" class="link no-wrap">
-                  FAQs
-                </Link>
-              </li>
-              <li class="nav-item text-link">
-                <Link to="#contact" class="link no-wrap">
-                  Contact Us
-                </Link>
-              </li>
-              <li class="nav-item gravitas-logo">
-                <Link to="#home" class="link last">
-                  <img src={gravitas} alt="" style={{ marginTop: "-25px" }} />
-                </Link>
-              </li>
-            </ul>
-          </div>
+          <div className="collapse navbar-collapse" id="navbarCollapse">
+  <ul className="navbar-nav me-auto mb-2">
+    <li className="nav-item">
+      <Link to="#home" className="link">
+        <img src={robovitics} alt="" />
+      </Link>
+    </li>
+    <li className="nav-item text-link">
+      <Link to="#hero" className="link no-wrap">
+        Home
+      </Link>
+    </li>
+    <li className="nav-item text-link">
+      <Link to="#aboutUsSection" className="link no-wrap">
+        About Us
+      </Link>
+    </li>
+    <li className="nav-item text-link">
+      <Link to="#categories" className="link no-wrap">
+        Categories
+      </Link>
+    </li>
+    <li className="nav-item text-link">
+      <Link to="#faqsection" className="link no-wrap">
+        FAQs
+      </Link>
+    </li>
+    <li className="nav-item text-link">
+      <Link to="#contact" className="link no-wrap">
+        Contact Us
+      </Link>
+    </li>
+    <li className="nav-item gravitas-logo">
+      <Link to="#home" className="link last">
+        <img src={gravitas} alt="" style={{ marginTop: "-25px" }} />
+      </Link>
+    </li>
+  </ul>
+</div>
+
         </div>
       </motion.nav>
     </div>
