@@ -19,15 +19,15 @@ const HeroSection = () => {
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
     
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(700, 700);  // Increased the size to match the larger container
+    renderer.setSize(700, 700);
     document.getElementById("three-robot-model").appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load("untitledhello3.gltf", (gltf) => {
+    loader.load("pleaseWORKagain.gltf", (gltf) => {
       const model = gltf.scene;
       model.rotation.y = Math.PI / 4;
 
-      model.scale.set(1.3, 1.3, 1.3); // Increased the model size
+      model.scale.set(1.8, 1.8, 1.8);
 
       model.traverse((child) => {
         if (child.isMesh) {
@@ -44,11 +44,14 @@ const HeroSection = () => {
       controls.maxPolarAngle = Math.PI / 2;
 
       camera.position.set(0, 0, 5.5);
-
+      const light = new THREE.PointLight( 0xff0000, 1, 100 );
+      light.position.set( 50, 50, 50 );
+      scene.add( light );
+      
       const ambientLight = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambientLight);
 
-      const directionalLight = new THREE.DirectionalLight(0xff8c00, 2);
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
       directionalLight.position.set(0, 10, 10).normalize();
       scene.add(directionalLight);
 
