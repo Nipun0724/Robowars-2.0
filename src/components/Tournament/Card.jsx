@@ -1,9 +1,9 @@
 import React from "react";
 import placeholder from "../../assets/placeholder_team.png";
 
-const Card = ({ data }) => {
+const Card = ({ number, data }) => {
   const placeholderData = {
-    date: "Date not available",
+    date: "TBD",
     team1: {
       team_code: "T1",
       team_icon: `${placeholder}`,
@@ -26,7 +26,7 @@ const Card = ({ data }) => {
       <div className="tournament-bracket__match" tabIndex="0">
         <table className="tournament-bracket__table">
           <div className="header">
-            <p>Match</p>
+            <p>Match {number}</p>
             <time dateTime={matchData.date || "1998-02-18"}>
               {matchData.date}
             </time>
@@ -52,6 +52,7 @@ const Card = ({ data }) => {
                 </span>
               </td>
             </tr>
+            <p style={{ color: "black" }}>V/S</p>
             <tr className="tournament-bracket__team">
               <td className="tournament-bracket__country">
                 <abbr className="tournament-bracket__code" title="Team 2">
