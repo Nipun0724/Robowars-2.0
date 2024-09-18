@@ -37,26 +37,26 @@ const Tournament15 = ({ data }) => {
             <div className="tournament-bracket tournament-bracket--rounded">
               <div className="tournament-bracket__round tournament-bracket__round--quarterfinals">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(11, true)} />
-                  <Card data={fetchData(12, true)} />
-                  <Card data={fetchData(13, true)} />
-                  <Card data={fetchData(14, true)} />
+                  <Card number={1} data={fetchData(11, true)} />
+                  <Card number={2} data={fetchData(12, true)} />
+                  <Card number={3} data={fetchData(13, true)} />
+                  <Card number={4} data={fetchData(14, true)} />
                 </ul>
               </div>
               <div className="tournament-bracket__round tournament-bracket__round--semifinals">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(21, true)} />
-                  <Card data={fetchData(22, true)} />
+                  <Card number={5} data={fetchData(21, true)} />
+                  <Card number={6} data={fetchData(22, true)} />
                 </ul>
               </div>
               <div className="tournament-bracket__round tournament-bracket__round--bronze">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(31, true)} />
+                  <Card number={7} data={fetchData(31, true)} />
                 </ul>
               </div>
               <div className="tournament-bracket__round tournament-bracket__round--gold">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(41, true)} />
+                  <Card number={8} data={fetchData(41, true)} />
                 </ul>
               </div>
             </div>
@@ -69,26 +69,26 @@ const Tournament15 = ({ data }) => {
             <div className="tournament-bracket tournament-bracket--rounded">
               <div className="tournament-bracket__round tournament-bracket__round--quarterfinals">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(11, false)} />
-                  <Card data={fetchData(12, false)} />
-                  <Card data={fetchData(13, false)} />
-                  <Card data={fetchData(14, false)} />
+                  <Card number={1} data={fetchData(11, false)} />
+                  <Card number={2} data={fetchData(12, false)} />
+                  <Card number={3} data={fetchData(13, false)} />
+                  <Card number={4} data={fetchData(14, false)} />
                 </ul>
               </div>
               <div className="tournament-bracket__round tournament-bracket__round--semifinals">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(21, false)} />
-                  <Card data={fetchData(22, false)} />
+                  <Card number={5} data={fetchData(21, false)} />
+                  <Card number={6} data={fetchData(22, false)} />
                 </ul>
               </div>
               <div className="tournament-bracket__round tournament-bracket__round--bronze">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(31, false)} />
+                  <Card number={7} data={fetchData(31, false)} />
                 </ul>
               </div>
               <div className="tournament-bracket__round tournament-bracket__round--gold">
                 <ul className="tournament-bracket__list">
-                  <Card data={fetchData(41, false)} />
+                  <Card number={8} data={fetchData(41, false)} />
                 </ul>
               </div>
             </div>
