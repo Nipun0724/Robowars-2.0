@@ -77,7 +77,10 @@
 }
 
 .winner-section h1 {
-  font-size: 30px;
+  font-size: 25px;
+  margin-left: -90px;
+  white-space: nowrap; /* Prevents text from wrapping */
+  overflow: hidden; /* Ensures that content is not visible if it overflows */
 }
 .winner-section {
   margin-right: 750px;
@@ -88,7 +91,7 @@
   padding: 5px;
   margin-left: 120px;
 }
-.navbar {
+.tournament-navbar {
   background-color: rgb(15, 13, 13);
   display: flex;
   text-align: center;
@@ -96,7 +99,7 @@
   gap: 50px;
 }
 
-.navbar button {
+.tournament-navbar button {
   background: none;
   border: none;
   padding: 10px 20px;
@@ -107,7 +110,7 @@
   transition: color 0.3s ease;
 }
 
-.navbar button::after {
+.tournament-navbar button::after {
   content: "";
   position: absolute;
   width: 0;
@@ -119,19 +122,19 @@
   transition: width 0.3s ease;
 }
 
-.navbar button.active {
+.tournament-navbar button.active {
   color: #e06f06;
 }
 
-.navbar button.active::after {
+.tournament-navbar button.active::after {
   width: 100%;
 }
 
-.navbar button:hover::after {
+.tournament-navbar button:hover::after {
   width: 100%;
 }
 
-.navbar button.active {
+.tournament-navbar button.active {
   color: #e06f06; /* Change color of active button */
   border-bottom: 2px solid #e06f06; /* Add underline to active button */
 }
@@ -589,5 +592,24 @@ h2 {
     padding: 1em;
     border: 1px solid transparent;
     border-radius: 1.5em;
+  }
+}
+.home-btn {
+  position: fixed;
+  top: 85%; /* Adjust the value to your preference */
+  left: 40%; /* Adjust the value to your preference */
+  z-index: 1000;
+  border-radius: 10px;
+  min-height: 40px;
+  background-color: #d64e2e;
+  transition: all 0.3s ease-in-out;
+  min-width: 100px;
+  margin-left: 48%;
+  margin-top: 1%;
+  margin-bottom: 2%;
+}
+@media (max-width: 700px) {
+  .home-btn {
+    left: 20%;
   }
 }

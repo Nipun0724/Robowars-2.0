@@ -2,7 +2,8 @@ import { motion, useAnimation, useInView } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import { HashLink as Link } from "react-router-hash-link";
 import robovitics from "../../assets/robovitics logo.png";
-import gravitas from "../../assets/gravitas-logo.png";
+import gravitas from "../../assets/newgravlogo.svg";
+import hamburger from "../../assets/hamburger.png";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -14,9 +15,9 @@ const Navbar = () => {
       for (var i = 0; i < 6; i = i + 1) {
         document
           .querySelectorAll(".link")
-        [i].addEventListener("click", function () {
-          document.querySelector(".navbar-toggler").click();
-        });
+          [i].addEventListener("click", function () {
+            document.querySelector(".navbar-toggler").click();
+          });
       }
     } else {
       if (document.getElementById("home")) {
@@ -68,13 +69,13 @@ const Navbar = () => {
           window.innerWidth < 1000
             ? { padding: 0 }
             : {
-              paddingTop: "20px",
-              backgroundColor: "rgba(255, 255, 255, 0.1)",
-              backdropFilter: "blur(20px)",
-              WebkitBackdropFilter: "blur(20px)",
+                paddingTop: "20px",
+                backgroundColor: "rgba(255, 255, 255, 0.1)",
+                backdropFilter: "blur(20px)",
+                WebkitBackdropFilter: "blur(20px)",
 
-              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-            }
+                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+              }
         }
       >
         <div class="container-fluid">
@@ -86,9 +87,9 @@ const Navbar = () => {
             aria-controls="navbarCollapse"
             aria-expanded="false"
             aria-label="Toggle navigation"
-            style={{ outline: "none" }}
+            style={{ background: "none" }}
           >
-            <span class="navbar-toggler-icon"></span>
+            <img src={hamburger} alt="" />
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2">
@@ -129,7 +130,6 @@ const Navbar = () => {
               </li>
             </ul>
           </div>
-
         </div>
       </motion.nav>
     </div>
