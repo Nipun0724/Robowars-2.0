@@ -3,9 +3,9 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 
 const Earth = () => {
-  const earth = useGLTF('Asset 2.gltf');
+  const earth = useGLTF('padoru_machina/scene.gltf');
   return (
-    <primitive object={earth.scene} scale={0.13} position-y={0} rotation-y={0} />
+    <primitive object={earth.scene} scale={0.5} position-y={-2}  rotation-y={7.9} rotation-z={15.2} rotation-x={9.95} position-x={0.5} />
   );
 };
 
@@ -33,7 +33,14 @@ export const EarthCanvas2 = () => {
         {/* Directional light for strong shadows */}
         <directionalLight 
           position={[10, 10, 10]} 
-          intensity={1} 
+          intensity={10} 
+          castShadow 
+          shadow-mapSize-width={1024} 
+          shadow-mapSize-height={1024} 
+        />
+            <directionalLight 
+          position={[-10, -10, -10]} 
+          intensity={10} 
           castShadow 
           shadow-mapSize-width={1024} 
           shadow-mapSize-height={1024} 
@@ -44,12 +51,12 @@ export const EarthCanvas2 = () => {
           position={[10, 20, 10]} 
           angle={0.15} 
           penumbra={1} 
-          intensity={0.8} 
+          intensity={1} 
           castShadow 
         />
 
         {/* Point light for additional lighting */}
-        <pointLight position={[-10, -10, -10]} intensity={0.5} />
+        <pointLight position={[-10, -10, -10]} intensity={1} />
 
         {/* Load and render the Earth model */}
         <Earth />
