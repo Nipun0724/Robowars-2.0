@@ -1,0 +1,11 @@
+Model Information:
+* title:	Magnetar - Robot Wars
+* source:	https://sketchfab.com/3d-models/magnetar-robot-wars-504fc70917d44b27990cdb45711269dd
+* author:	TzHaar-Ket (https://sketchfab.com/TzHaar-Ket)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Magnetar - Robot Wars" (https://sketchfab.com/3d-models/magnetar-robot-wars-504fc70917d44b27990cdb45711269dd) by TzHaar-Ket (https://sketchfab.com/TzHaar-Ket) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
