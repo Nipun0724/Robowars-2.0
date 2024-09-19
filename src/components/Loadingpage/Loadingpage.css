@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Monument+Extended:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Monument+Extended:wght@400;700&display=swap");
 .progressbar-container {
   height: 100vh;
   display: grid;
@@ -13,6 +13,7 @@
   align-items: center;
   justify-content: center;
   margin-bottom: -400px;
+  margin-top: -90%;
 }
 
 .progressbar {
@@ -25,7 +26,6 @@
   border-radius: 60px;
   box-shadow: 0px 0px 20px #d74b06;
   overflow: hidden;
-  
 }
 
 .bar {
@@ -41,27 +41,13 @@
 
 .loading-text {
   margin-top: 10px;
-  font-family: 'Monument Extended'; /* You can replace this with any font you like */
+  font-family: "Monument Extended"; /* You can replace this with any font you like */
   font-size: 24px;
   color: #e66603;
   text-align: center;
 }
-
-#three-robot-model1 {
-  
-  height: 40vw; 
-  max-width: 500px;
-  max-height: 500px;
-  min-width: 300px; 
-  min-height: 300px;
-  margin-right: 60px; 
-  display: flex;
-  justify-content: center;
-  margin-top: -2vh;
-  overflow: hidden; 
-}
-.loader{
-  margin-left:150px ;
+.loader {
+  margin-left: 150px;
   background-color: white;
   width: 110px;
   margin-bottom: 40px;
@@ -70,63 +56,59 @@
 
 .logo-container {
   perspective: 1000px;
-  height:50px;
+  height: 50px;
   margin-top: -270px;
   margin-left: -300px;
- 
 }
 
-.logo {
+.loading-logo {
   animation: heartbeat 1.7s ease-in-out infinite;
-  height:350px;
-  width:auto;
- 
+  height: 150px;
+  margin-top: 20%;
+  margin-left: 13%;
+  width: auto;
 }
 
 @keyframes heartbeat {
-  0%, 100% {
+  0%,
+  100% {
     transform: scale(1);
   }
   20% {
     transform: scale(1);
   }
   40% {
-    transform: scale(0.9);
+    transform: scale(0.95);
   }
   60% {
-    transform: scale(1.3);
+    transform: scale(1.05);
   }
   80% {
     transform: scale(1);
   }
 }
 @media (max-width: 800px) {
- 
-
   .logo-container {
     margin-left: -300px;
-   /* Reduce top margin on smaller screens */
+    /* Reduce top margin on smaller screens */
     /* Adjust height for smaller screens */
   }
-  .logo{
-    margin-left: 170px;
+  .logo {
+    margin-left: 30%;
   }
-
 }
 
 @media (max-width: 400px) {
   .logo-container {
     margin-left: -300px;
-   /* Further adjust height */
+    /* Further adjust height */
   }
-
 
   .loader {
     width: 100%; /* Full width on very small screens */
     max-width: none; /* Remove maximum width restriction */
   }
-  .logo{
-    margin-left: 170px;
+  .logo {
+    margin-left: 45%;
   }
- 
 }

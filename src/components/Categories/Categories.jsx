@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import "./Categories.css";
-import "./Robot.css";
-import {EarthCanvas} from "../canvas/Earth"
-import {EarthCanvas2} from "../canvas/Earth2"
-import {EarthCanvas3} from "../canvas/Earth3"
+import { EarthCanvas } from "../canvas/Earth";
+import { EarthCanvas2 } from "../canvas/Earth2";
+import { EarthCanvas3 } from "../canvas/Earth3";
 const Categories = () => {
   const controls = useAnimation();
 
@@ -32,21 +31,25 @@ const Categories = () => {
         transition={{ duration: 1 }}
       >
         <div className="robot1">
-        <div className="white-container">
+          <h2 className="category">8 KG</h2>
+          <div className="white-container">
             <EarthCanvas3></EarthCanvas3>
-           </div>
+          </div>
         </div>
         <div className="robot2">
-        <div className="white-container">
+          <h2 className="category">15 KG</h2>
+
+          <div className="white-container">
             <EarthCanvas2></EarthCanvas2>
-           </div>
+          </div>
         </div>
 
         <div className="robot3">
-           <div className="white-container">
+          <h2 className="category">60 KG</h2>
+
+          <div className="white-container">
             <EarthCanvas></EarthCanvas>
-           </div>
-                 
+          </div>
         </div>
       </motion.div>
     </>
