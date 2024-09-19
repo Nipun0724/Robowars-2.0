@@ -17,16 +17,24 @@ const HeroSection = () => {
   useEffect(() => {
     const scene = new THREE.Scene();
     const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+    
     const renderer = new THREE.WebGLRenderer({ alpha: true });
-    renderer.setSize(500, 500);  // Increased the size to match the larger container
+    renderer.setSize(700, 700);
     document.getElementById("three-robot-model").appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load("ROBOWARSmainLOGO.glb", (gltf) => {
+    loader.load("pleaseWORKagain.gltf", (gltf) => {
       const model = gltf.scene;
       model.rotation.y = Math.PI / 4;
 
-      model.scale.set(1.6, 1.6, 1.6); // Increased the model size
+      model.scale.set(1.8, 1.8, 1.8);
+
+      model.traverse((child) => {
+        if (child.isMesh) {
+          child.material.color.set(0xffffff); 
+        }
+      });
+
       scene.add(model);
 
       const controls = new OrbitControls(camera, renderer.domElement);
@@ -36,11 +44,14 @@ const HeroSection = () => {
       controls.maxPolarAngle = Math.PI / 2;
 
       camera.position.set(0, 0, 5.5);
-
+      const light = new THREE.PointLight( 0xff0000, 1, 100 );
+      light.position.set( 50, 50, 50 );
+      scene.add( light );
+      
       const ambientLight = new THREE.AmbientLight(0xffffff, 1);
       scene.add(ambientLight);
 
-      const directionalLight = new THREE.DirectionalLight(0xff8c00, 2);
+      const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
       directionalLight.position.set(0, 10, 10).normalize();
       scene.add(directionalLight);
 
@@ -75,12 +86,13 @@ const HeroSection = () => {
   return (
     <motion.div className="hero-section">
       <div>
-        <div className="title">
-          <h1 className="herologo">ROBOWARS</h1>
-        </div>
+
         <div id="three-robot-model" ref={threeContainerRef}></div>
       </div>
       <div className="content">
+        <div className="title">
+          <h1 className="herologo">ROBOWARS</h1>
+        </div>
         <h2>FORGE<div>.</div>BATTLE<div>.</div>WRECK</h2>
         <p>
           EXPERIENCE THE THRILL OF COMBAT ROBOTICS AT ROBOWARS. REGISTER NOW TO BOOK YOUR SEAT AND WITNESS THE CLASH OF ROBOTS.

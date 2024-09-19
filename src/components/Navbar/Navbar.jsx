@@ -14,9 +14,9 @@ const Navbar = () => {
       for (var i = 0; i < 6; i = i + 1) {
         document
           .querySelectorAll(".link")
-          [i].addEventListener("click", function () {
-            document.querySelector(".navbar-toggler").click();
-          });
+        [i].addEventListener("click", function () {
+          document.querySelector(".navbar-toggler").click();
+        });
       }
     } else {
       if (document.getElementById("home")) {
@@ -68,13 +68,13 @@ const Navbar = () => {
           window.innerWidth < 1000
             ? { padding: 0 }
             : {
-                paddingTop: "20px",
-                backgroundColor: "rgba(255, 255, 255, 0.1)",
-                backdropFilter: "blur(20px)",
-                WebkitBackdropFilter: "blur(20px)",
+              paddingTop: "20px",
+              backgroundColor: "rgba(255, 255, 255, 0.1)",
+              backdropFilter: "blur(20px)",
+              WebkitBackdropFilter: "blur(20px)",
 
-                boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
-              }
+              boxShadow: "0 4px 6px rgba(0, 0, 0, 0.1)",
+            }
         }
       >
         <div class="container-fluid">
@@ -91,44 +91,44 @@ const Navbar = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
-  <ul className="navbar-nav me-auto mb-2">
-    <li className="nav-item">
-      <Link to="#home" className="link">
-        <img src={robovitics} alt="" />
-      </Link>
-    </li>
-    <li className="nav-item text-link">
-      <Link to="#hero" className="link no-wrap">
-        Home
-      </Link>
-    </li>
-    <li className="nav-item text-link">
-      <Link to="#aboutUsSection" className="link no-wrap">
-        About Us
-      </Link>
-    </li>
-    <li className="nav-item text-link">
-      <Link to="#categories" className="link no-wrap">
-        Categories
-      </Link>
-    </li>
-    <li className="nav-item text-link">
-      <Link to="#faqsection" className="link no-wrap">
-        FAQs
-      </Link>
-    </li>
-    <li className="nav-item text-link">
-      <Link to="#contact" className="link no-wrap">
-        Contact Us
-      </Link>
-    </li>
-    <li className="nav-item gravitas-logo">
-      <Link to="#home" className="link last">
-        <img src={gravitas} alt="" style={{ marginTop: "-25px" }} />
-      </Link>
-    </li>
-  </ul>
-</div>
+            <ul className="navbar-nav me-auto mb-2">
+              <li className="nav-item">
+                <Link to="#home" className="link">
+                  <img src={robovitics} alt="" />
+                </Link>
+              </li>
+              <li className="nav-item text-link">
+                <Link to="#hero" className="link no-wrap">
+                  Home
+                </Link>
+              </li>
+              <li className="nav-item text-link">
+                <Link to="#aboutUsSection" className="link no-wrap">
+                  About Us
+                </Link>
+              </li>
+              <li className="nav-item text-link">
+                <Link to="#categories" className="link no-wrap">
+                  Categories
+                </Link>
+              </li>
+              <li className="nav-item text-link">
+                <Link to="#faqsection" className="link no-wrap">
+                  FAQs
+                </Link>
+              </li>
+              <li className="nav-item text-link">
+                <Link to="#contact" className="link no-wrap">
+                  Contact Us
+                </Link>
+              </li>
+              <li className="nav-item gravitas-logo">
+                <Link to="#home" className="link last">
+                  <img src={gravitas} alt="" style={{ marginTop: "-25px" }} />
+                </Link>
+              </li>
+            </ul>
+          </div>
 
         </div>
       </motion.nav>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	SawBlaze 2021 - Battlebots
+* source:	https://sketchfab.com/3d-models/sawblaze-2021-battlebots-1eb05359a1ed4a4eb6358545737faaf3
+* author:	TzHaar-Ket (https://sketchfab.com/TzHaar-Ket)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "SawBlaze 2021 - Battlebots" (https://sketchfab.com/3d-models/sawblaze-2021-battlebots-1eb05359a1ed4a4eb6358545737faaf3) by TzHaar-Ket (https://sketchfab.com/TzHaar-Ket) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

@@ -3,14 +3,15 @@ import { Canvas } from '@react-three/fiber';
 import { OrbitControls, Preload, useGLTF } from '@react-three/drei';
 import { Environment } from '@react-three/drei';
 const Earth = () => {
-  const earth = useGLTF('Asset 1.gltf');
+  const earth = useGLTF('robo.gltf');
   return (
-    <primitive object={earth.scene} scale={0.13} position-y={0} rotation-y={0} />
+    <primitive object={earth.scene} scale={0.01} position-y={-1.6} rotation-y={0} rotation-z={0} rotation-x={4.7} position-x={0.5} />
   );
 };
 
 export const EarthCanvas = () => {
   return (
+
     <Canvas 
       shadows 
       frameloop='demand' 
@@ -66,8 +67,9 @@ export const EarthCanvas = () => {
         <pointLight position={[-10, -10, -10]} intensity={0.5} />
 
         {/* Load and render the Earth model */}
+       
         <Earth />
-
+        
         {/* Preload assets */}
         <Preload all />
       </Suspense>
