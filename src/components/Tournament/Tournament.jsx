@@ -6,9 +6,9 @@ import Tournament15 from "./Tournament15";
 import Tournament60 from "./Tournament60";
 import { useNavigate } from "react-router-dom";
 
-// const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
-// const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
-// const supabase = createClient(supabaseUrl, supabaseKey);
+const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
+const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 const Tournament = () => {
   const [activeButton, setActiveButton] = useState("8KG");
@@ -41,26 +41,26 @@ const Tournament = () => {
         team2:teams!team_2(*)
       `);
 
-//       // Handle errors
-//       if (error_8 || error_15 || error_60) {
-//         console.error("Error fetching data:", error_8 || error_15 || error_60);
-//         return;
-//       }
+      // Handle errors
+      if (error_8 || error_15 || error_60) {
+        console.error("Error fetching data:", error_8 || error_15 || error_60);
+        return;
+      }
 
-//       // Update the data state with fetched data
-//       setData({
-//         match_8: match_8 || [],
-//         match_15: match_15 || [],
-//         match_60: match_60 || [],
-//       });
-//     } catch (error) {
-//       console.error("Error fetching data:", error);
-//     }
-//   };
+      // Update the data state with fetched data
+      setData({
+        match_8: match_8 || [],
+        match_15: match_15 || [],
+        match_60: match_60 || [],
+      });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  };
 
-//   useEffect(() => {
-//     handleFetch();
-//   }, []);
+  useEffect(() => {
+    handleFetch();
+  }, []);
 
   return (
     <>
@@ -100,4 +100,4 @@ const Tournament = () => {
   );
 };
 
-// export default Tournament;
+export default Tournament;
