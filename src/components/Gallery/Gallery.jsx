@@ -31,7 +31,7 @@ const Gallery = () => {
 
   return (
     <>
-      <h1 className="mediaText">Publications and Media</h1>
+      <h1 className="mediaText">GALLERY</h1>
       <motion.div
         ref={ref}
         variants={{
@@ -48,15 +48,17 @@ const Gallery = () => {
               key={index}
               className="item"
               data-pos={pos}
-              onClick={() => setPositions((prevPositions) => {
-                const newPositions = [...prevPositions];
-                const heroIndex = newPositions.indexOf(0);
-                [newPositions[heroIndex], newPositions[index]] = [
-                  newPositions[index],
-                  newPositions[heroIndex],
-                ];
-                return newPositions;
-              })}
+              onClick={() =>
+                setPositions((prevPositions) => {
+                  const newPositions = [...prevPositions];
+                  const heroIndex = newPositions.indexOf(0);
+                  [newPositions[heroIndex], newPositions[index]] = [
+                    newPositions[index],
+                    newPositions[heroIndex],
+                  ];
+                  return newPositions;
+                })
+              }
             >
               <img src={images[index]} alt={`Gallery item ${index}`} />
             </div>

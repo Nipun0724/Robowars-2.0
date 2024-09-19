@@ -4,6 +4,7 @@ import { createClient } from "@supabase/supabase-js";
 import Tournament8 from "./Tournament8";
 import Tournament15 from "./Tournament15";
 import Tournament60 from "./Tournament60";
+import { useNavigate } from "react-router-dom";
 
 const supabaseUrl = process.env.REACT_APP_SUPABASE_URL;
 const supabaseKey = process.env.REACT_APP_SUPABASE_KEY;
@@ -16,7 +17,7 @@ const Tournament = () => {
     match_15: [],
     match_60: [],
   });
-
+  const navigate = useNavigate();
   const handleFetch = async () => {
     try {
       const { data: match_8, error: error_8 } = await supabase.from("match_8")
@@ -63,7 +64,7 @@ const Tournament = () => {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="tournament-navbar">
         <button
           className={activeButton === "8KG" ? "active" : ""}
           onClick={() => setActiveButton("8KG")}
@@ -87,6 +88,14 @@ const Tournament = () => {
       {activeButton === "8KG" && <Tournament8 data={data.match_8} />}
       {activeButton === "15KG" && <Tournament15 data={data.match_15} />}
       {activeButton === "60KG" && <Tournament60 data={data.match_60} />}
+      <button
+        className="home-btn"
+        onClick={() => {
+          navigate("/");
+        }}
+      >
+        Go Home
+      </button>
     </>
   );
 };
