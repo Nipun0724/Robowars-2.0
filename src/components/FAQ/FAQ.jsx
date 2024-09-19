@@ -44,7 +44,7 @@ const FAQ = () => {
                 justifyContent: "space-between",
                 alignItems: "center",
                 padding: "15px",
-                backgroundColor: activeIndex === index ? "#8B4513" : "#A52A2A", // Change background color when active
+                backgroundColor: activeIndex === index ? "#ef6d1e" : "#d64e2e", // Change background color when active
                 color: "white",
                 border: "1px solid white",
               }}
@@ -87,11 +87,13 @@ const faqData = [
   },
   {
     question: "How can you attend this event?",
-    answer: "Go to the Gravitas website and search for robowars to register for the event!",
+    answer:
+      "Go to the Gravitas website and search for robowars to register for the event!",
   },
   {
     question: "Who is eligible to participate?",
-    answer: "If you’re a part of a team that builds bots and bots follow our regulations. Check out the rulebook above!",
+    answer:
+      "If you’re a part of a team that builds bots and bots follow our regulations. Check out the rulebook above!",
   },
   {
     question: "How long is the event?",

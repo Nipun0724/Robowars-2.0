@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap");
 @font-face {
   font-family: "Sd Robotics";
   src: url("/public/robtronika-font/Robtronika-3lZyy.ttf") format("truetype");
@@ -14,9 +15,10 @@
 }
 
 body {
-  font-family: "Poppins";
-  background-color: #161719;
+  background-color: #000;
   color: #fff;
+  font-family: "Roboto Slab", serif;
+  font-optical-sizing: auto;
 }
 
 ::-webkit-scrollbar {
@@ -32,14 +34,7 @@ a:hover {
   color: #d9ba85;
   text-decoration: none;
 }
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Playfair Display", serif;
-}
+
 section {
   padding: 60px 0;
   overflow: hidden;
@@ -84,6 +79,8 @@ section {
   text-decoration: underline;
   text-underline-offset: 0.25em;
   text-align: center;
+  font-size: 2.5rem;
+  margin-top: 15%;
   font-family: "Sd Robotics", serif;
 }
 
