@@ -34,7 +34,7 @@ function App() {
     } else {
       setTimeout(() => {
         setLoading(false);
-      }, 1500);
+      }, 2500);
     }
   }, [a]);
   const controls = useAnimation();

@@ -9,9 +9,9 @@
 .robot3 {
   width: 30%;
   height: 80vh;
-  background-image: url("../../assets/frame.png");
+  position: relative;
   background-repeat: no-repeat;
-  background-size: 100% ;
+  background-size: 100%;
   border: 2px solid black;
   border-radius: 40px;
 }
@@ -19,12 +19,21 @@
 .categories-heading {
   text-align: center;
 }
-
+.category {
+  position: absolute;
+  top: 5%;
+  left: 37%;
+  font-size: 40px;
+}
 @media only screen and (max-width: 768px) {
   .categories {
     display: flex;
     flex-direction: column;
     align-items: center; /* Center align the columns */
+  }
+  .category {
+    margin-left: 0%;
+    font-size: 30px;
   }
   .robot1,
   .robot2,
@@ -32,7 +41,6 @@
     width: 70%; /* Adjust the width for better fit on mobile */
     height: 50vh; /* Adjust height if necessary */
     margin-bottom: 20px; /* Add spacing between items */
-
   }
   #three-container,
   #three-container1 {
@@ -42,10 +50,6 @@
   #three-container {
     margin-bottom: -20px;
   }
-}
-
-.robot-container {
-  /* Ensure there's enough space for the 3D models */
 }
 
 #three-container,
@@ -77,7 +81,6 @@
   border: 2px solid white;
   background-image: url("../../assets/arena.jpg");
   background-repeat: no-repeat;
-  background-size:cover;
+  background-size: cover;
   background-position: 50%;
- 
 }

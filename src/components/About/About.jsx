@@ -53,8 +53,12 @@ export default function AboutUs() {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (
+          entry.isIntersecting &&
+          !entry.target.classList.contains("scroll-trigger")
+        ) {
           entry.target.classList.add("scroll-trigger");
+          observer.unobserve(entry.target);
         } else {
           entry.target.classList.remove("scroll-trigger");
         }

@@ -1,15 +1,18 @@
 import { motion, useAnimation } from "framer-motion";
 import React, { useEffect, useRef } from "react";
 import "./Loadingpage.css";
-import image from '../../assets/robowars_logo.gif'; // Import the image
+import image from "../../assets/robowars_logo.gif"; // Import the image
 
-const Progressbar = ({ value }) => { // No need to pass `image` as a prop
+const Progressbar = ({ value }) => {
+  // No need to pass `image` as a prop
   const progressRef = useRef(null);
   const controls = useAnimation();
 
   useEffect(() => {
     if (value === 100) {
-      controls.start("fading"); // Start fade-out animation
+      setTimeout(() => {
+        controls.start("fading");
+      }, 1000);
     }
   }, [value, controls]);
 
@@ -28,7 +31,7 @@ const Progressbar = ({ value }) => { // No need to pass `image` as a prop
       transition={{ duration: 1, ease: "easeInOut" }}
     >
       <div className="logo-container">
-        <img src={image} className='logo' alt="Logo" />
+        <img src={image} className="loading-logo" alt="Logo" />
       </div>
       <div
         style={{
@@ -49,7 +52,6 @@ const Progressbar = ({ value }) => { // No need to pass `image` as a prop
             }}
           />
         </div>
-        <div className="loading-text">L o a d i n g</div>
       </div>
     </motion.div>
   );
