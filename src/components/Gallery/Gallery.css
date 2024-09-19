@@ -57,14 +57,12 @@ div[data-pos="4"] {
   .gallery .item {
     width: 45vw;
     height: 25vh;
-    border: 3px solid #f0f0f0;
   }
 
   .gallery div[data-pos="0"] {
     width: 90vw;
     height: 50vh;
     z-index: 10;
-    border: 5px solid #ccc;
   }
 
   div[data-pos="0"] {

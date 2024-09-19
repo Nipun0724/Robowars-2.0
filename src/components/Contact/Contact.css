@@ -197,7 +197,7 @@
   }
 }
 
-.logo {
+.contact_logo {
   position: absolute;
   left: 50%;
   top: 50%;
@@ -205,7 +205,7 @@
   transition: all 0.6s ease-in-out;
 }
 
-.logo .logo-svg {
+.contact_logo .logo-svg {
   fill: white;
   width: 30px;
   height: 30px;
@@ -343,7 +343,7 @@
   left: -1px;
 }
 
-.card1:hover .logo {
+.card1:hover .contact_logo {
   transform: translate(0, 0);
   top: 20px;
   left: 20px;
@@ -404,7 +404,7 @@
     margin-top: 2rem;
   }
 
-  .logo {
+  .contact_logo {
     position: absolute;
     top: 50;
     left: 8rem;
@@ -422,7 +422,7 @@
     left: -1px;
   }
 
-  .card1:hover .logo {
+  .card1:hover .contact_logo {
     transform: translate(0, 0);
     top: 0;
     left: 0;
@@ -474,7 +474,7 @@
     margin-top: 2rem;
   }
 
-  .logo {
+  .contact_logo {
     position: absolute;
     top: 50;
     left: 8rem;
@@ -492,7 +492,7 @@
     left: -1px;
   }
 
-  .card1:hover .logo {
+  .card1:hover .contact_logo {
     transform: translate(0, 0);
     top: 0;
     left: 0;

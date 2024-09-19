@@ -16,7 +16,7 @@ const Tournament8 = ({ data }) => {
         style={{ marginTop: "20%" }}
       >
         <div className="spinner-border" role="status">
-          <span className="sr-only">Loading...</span>
+          <span className="visually-hidden">Loading...</span>
         </div>
       </div>
     );
@@ -25,8 +25,11 @@ const Tournament8 = ({ data }) => {
   return (
     <div>
       {!data ? (
-        <div className="spinner-grow" role="status">
-          <span className="sr-only">Loading...</span>
+        <div
+          className="d-flex justify-content-center"
+          style={{ marginTop: "20%" }}
+        >
+          <div class="spinner-border text-dark" role="status"></div>
         </div>
       ) : (
         <div>

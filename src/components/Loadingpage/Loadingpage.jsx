@@ -31,7 +31,7 @@ const Progressbar = ({ value }) => {
       transition={{ duration: 1, ease: "easeInOut" }}
     >
       <div className="logo-container">
-        <img src={image} className="logo loading-logo" alt="Logo" />
+        <img src={image} className="loading-logo" alt="Logo" />
       </div>
       <div
         style={{

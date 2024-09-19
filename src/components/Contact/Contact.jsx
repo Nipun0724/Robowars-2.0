@@ -46,7 +46,7 @@ const Contact = () => {
     }, []);
 
     return (
-      <div className="logo">
+      <div className="contact_logo">
         {windowWidth > 1188 ? (
           <img src={robovitics_desktop} alt="Desktop Logo" />
         ) : (

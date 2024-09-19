@@ -66,6 +66,8 @@
   height: 150px;
   margin-top: 20%;
   margin-left: 13%;
+  position: absolute;
+  left: 50%;
   width: auto;
 }
 
@@ -90,25 +92,16 @@
 @media (max-width: 800px) {
   .logo-container {
     margin-left: -300px;
-    /* Reduce top margin on smaller screens */
-    /* Adjust height for smaller screens */
-  }
-  .logo {
-    margin-left: 30%;
   }
 }
 
 @media (max-width: 400px) {
   .logo-container {
     margin-left: -300px;
-    /* Further adjust height */
   }
 
   .loader {
     width: 100%; /* Full width on very small screens */
     max-width: none; /* Remove maximum width restriction */
-  }
-  .logo {
-    margin-left: 45%;
   }
 }
