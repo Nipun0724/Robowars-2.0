@@ -1,10 +1,10 @@
 import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import "./Gallery.css";
-import pub4 from "../../assets/publication4.jpg";
-import pub3 from "../../assets/publication3.jpg";
-import pub2 from "../../assets/publication2.jpg";
-import pub1 from "../../assets/publication1.jpg";
+import pub4 from "../../assets/img4.png";
+import pub3 from "../../assets/img3.png";
+import pub2 from "../../assets/img2.png";
+import pub1 from "../../assets/img1.png";
 
 const images = [pub1, pub2, pub3, pub4, pub1];
 

@@ -12,6 +12,7 @@ import Loadingpage from "./components/Loadingpage/Loadingpage";
 import { useAnimation } from "framer-motion";
 import { useEffect, useState } from "react";
 import CursorTrail from "./components/Cursoranimation/Cursoranimation";
+import Watchlive from "./components/WatchLive/Watchlive";
 
 function App() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 1000);
@@ -74,6 +75,14 @@ function App() {
           element={
             <div>
               <Tournament />
+            </div>
+          }
+        />
+          <Route
+          path="/watchlive"
+          element={
+            <div>
+              <Watchlive/>
             </div>
           }
         />
