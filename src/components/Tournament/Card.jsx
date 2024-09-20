@@ -42,7 +42,7 @@ const Card = ({ number, data }) => {
     ) {
       return (
         <button
-          onClick={() => navigate("/")}
+          onClick={() => navigate("/watchlive")}
           style={{ color: "red", fontWeight: "bold" }}
         >
           ● Live

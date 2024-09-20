@@ -1,12 +1,15 @@
 import React, { useEffect, useRef } from "react";
 import "./HeroSection.css";
-import { useNavigate } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
 import { motion, useAnimation, useInView } from "framer-motion";
 import * as THREE from "three";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls.js";
 
 const HeroSection = () => {
+  const handleWatchLiveClick = () => {
+    navigate("/watchlive"); // Add this function for Watch Live navigation
+  };
   const navigate = useNavigate();
   const threeContainerRef = useRef(null);
   const inView = useInView(threeContainerRef, { once: true });
@@ -133,7 +136,7 @@ const HeroSection = () => {
           BOOK YOUR SEAT AND WITNESS THE CLASH OF ROBOTS.
         </p>
         <div className="buttons">
-          <button className="watch-live">Watch Live</button>
+          <button className="watch-live" onClick={handleWatchLiveClick}>Watch Live</button>
           <button className="matches" onClick={handleMatchesClick}>
             Matches
           </button>
