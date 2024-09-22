@@ -613,3 +613,69 @@ h2 {
     left: 20%;
   }
 }
+
+.vertical-round {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.vertical-round .round {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-round .seed {
+  margin: 10px 0;
+}
+
+.bracket-container {
+  display: flex;
+  justify-content: space-around; 
+  align-items: flex-start;
+  flex-wrap: wrap; 
+  gap: 40px;
+  margin: 20px;
+  width: 100%; 
+  overflow-x: auto; 
+}
+
+.bracket-section {
+  flex: 1;
+  min-width: 45%;
+  max-width: 48%; 
+  overflow-x: auto; 
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.tournament-bracket {
+  width: 100%;
+  min-width: 600px; 
+  overflow-x: auto;
+}
+
+.winner-section,
+.loser-section {
+  text-align: center;
+  padding: 0 20px;
+}
+
+.winner-section h1,
+.loser-section h1 {
+  font-size: 24px;
+  margin-bottom: 10px;
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .bracket-container {
+    flex-direction: column; 
+  }
+
+  .bracket-section {
+    max-width: 100%; 
+    overflow-x: scroll;
+  }
+}

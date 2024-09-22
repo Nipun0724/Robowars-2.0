@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 import React, { useEffect, useState } from 'react';
 import { supabase } from '../../supabase'; 
 import './TournamentDet.css'; 
@@ -117,6 +118,81 @@ const Tournament8 = () => {
       return <p className="no-matches">No upcoming matches</p>;
     }
 
+=======
+import React, { useState, useEffect } from "react";
+import { Bracket } from "react-brackets";
+import Card from "./Card"; 
+import { supabase } from '../../supabase'; 
+
+const Tournament8 = () => {
+  const [data, setData] = useState([]);
+  const [numberTeam, setNumberTeam] = useState(32);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      let { data: matchData, error } = await supabase
+        .from('match_8')
+        .select('*');
+
+      if (error) console.error("Error fetching data from Supabase", error);
+      else setData(matchData);
+    };
+
+    fetchData();
+  }, []);
+
+  const totalWinnerRounds = Math.ceil(Math.log2(numberTeam));
+  const totalLoserRounds = totalWinnerRounds - 1; 
+
+  const fetchMatchData = (id, bracket) => {
+    return data.find(
+      (match) => match.stage_id === id && match.winner_bracket === bracket
+    );
+  };
+
+  const prepareBracketData = (totalRounds, isWinnerBracket) => {
+    let rounds = [];
+    let numMatches = Math.pow(2, totalRounds - 1); 
+
+    for (let round = 1; round <= totalRounds; round++) {
+      let matches = Array.from({ length: numMatches }, (_, i) => {
+        const matchId = round * 10 + i + 1;
+        const matchData = fetchMatchData(matchId, isWinnerBracket);
+
+        return {
+          id: matchId,
+          date: matchData?.time || "TBD",
+          teams: [
+            {
+              name: matchData?.team1?.team_name || "TBD",
+              icon: matchData?.team1?.team_icon || "", 
+              score: matchData?.score_1 || "TBD",
+            },
+            {
+              name: matchData?.team2?.team_name || "TBD",
+              icon: matchData?.team2?.team_icon || "", 
+              score: matchData?.score_2 || "TBD",
+            },
+          ].filter(team => team.name !== "TBD" || team.score !== "TBD"), 
+        };
+      });
+
+      rounds.push({
+        title: `Round ${round}`,
+        seeds: matches,
+      });
+
+      numMatches /= 2; 
+    }
+
+    return rounds;
+  };
+
+  const winnerBracketData = prepareBracketData(totalWinnerRounds, true);
+  const loserBracketData = prepareBracketData(totalLoserRounds, false);
+
+  if (!data || data.length === 0) {
+>>>>>>> Stashed changes
     return (
       <div className="upcoming-matches-container">
         {upcomingMatches.map((match) => (
@@ -143,6 +219,7 @@ const Tournament8 = () => {
   };
 
   return (
+<<<<<<< Updated upstream
     <div className="tournament-container">
       <h1 className="tournament-title">Team Details</h1>
 
@@ -190,6 +267,78 @@ const Tournament8 = () => {
 
       <h2 className="upcoming-title">Upcoming Matches</h2>
       {renderUpcomingMatches()}
+=======
+    <div className="bracket-container">
+      {/* Winner's Bracket */}
+      {/* <div className="bracket-section winner-section">
+        <h1>Winner's Bracket</h1>
+        <Bracket
+          rounds={winnerBracketData}
+          renderSeedComponent={(seedData, breakpoint) => {
+            const teams = Array.isArray(seedData.teams) ? seedData.teams : [];
+            const team1 = teams.length > 0 ? teams[0] : { name: "TBD", icon: "", score: "TBD" };
+            const team2 = teams.length > 1 ? teams[1] : { name: "TBD", icon: "", score: "TBD" };
+
+            return (
+              <Card
+                number={seedData.id}
+                data={{
+                  time: seedData.date,
+                  team1: { team_icon: team1.icon, score_1: team1.score },
+                  team2: { team_icon: team2.icon, score_2: team2.score },
+                }}
+              />
+            );
+          }}
+        />
+      </div> */}
+
+      <div className="bracket-section loser-section">
+        <h1>Winner's Bracket</h1>
+        <Bracket
+          rounds={winnerBracketData}
+          renderSeedComponent={(seedData, breakpoint) => {
+            const teams = Array.isArray(seedData.teams) ? seedData.teams : [];
+            const team1 = teams.length > 0 ? teams[0] : { name: "TBD", icon: "", score: "TBD" };
+            const team2 = teams.length > 1 ? teams[1] : { name: "TBD", icon: "", score: "TBD" };
+
+            return (
+              <Card
+                number={seedData.id}
+                data={{
+                  time: seedData.date,
+                  team1: { team_icon: team1.icon, score_1: team1.score },
+                  team2: { team_icon: team2.icon, score_2: team2.score },
+                }}
+              />
+            );
+          }}
+        />
+      </div>
+      {/* Loser's Bracket */}
+      <div className="bracket-section loser-section">
+        <h1>Loser's Bracket</h1>
+        <Bracket
+          rounds={loserBracketData}
+          renderSeedComponent={(seedData, breakpoint) => {
+            const teams = Array.isArray(seedData.teams) ? seedData.teams : [];
+            const team1 = teams.length > 0 ? teams[0] : { name: "TBD", icon: "", score: "TBD" };
+            const team2 = teams.length > 1 ? teams[1] : { name: "TBD", icon: "", score: "TBD" };
+
+            return (
+              <Card
+                number={seedData.id}
+                data={{
+                  time: seedData.date,
+                  team1: { team_icon: team1.icon, score_1: team1.score },
+                  team2: { team_icon: team2.icon, score_2: team2.score },
+                }}
+              />
+            );
+          }}
+        />
+      </div>
+>>>>>>> Stashed changes
     </div>
   );
 };
