@@ -33,7 +33,7 @@ const Categories = () => {
         <div className="robot1">
           <h2 className="category">8 KG</h2>
           <div className="white-container">
-            <EarthCanvas3></EarthCanvas3>
+            <EarthCanvas></EarthCanvas>
           </div>
         </div>
         <div className="robot2">
@@ -48,7 +48,7 @@ const Categories = () => {
           <h2 className="category">60 KG</h2>
 
           <div className="white-container">
-            <EarthCanvas></EarthCanvas>
+            <EarthCanvas3></EarthCanvas3>
           </div>
         </div>
       </motion.div>

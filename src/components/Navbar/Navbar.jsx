@@ -89,7 +89,7 @@ const Navbar = () => {
             aria-label="Toggle navigation"
             style={{ background: "none" }}
           >
-            <img src={hamburger} alt="" />
+            {window.innerWidth < 900 ? <img src={hamburger} alt="" /> : null}
           </button>
           <div className="collapse navbar-collapse" id="navbarCollapse">
             <ul className="navbar-nav me-auto mb-2">

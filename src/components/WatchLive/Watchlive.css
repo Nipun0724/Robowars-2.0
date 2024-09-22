@@ -1,74 +1,34 @@
-.tournament-navbar {
-  background-color: rgb(15, 13, 13);
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  gap: 50px;
-}
-
-.tournament-navbar button {
-  background: none;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  color: #e06f06;
-  cursor: pointer;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.tournament-navbar button::after {
-  content: "";
-  position: absolute;
-  width: 0;
-  height: 2px;
-  background-color: #e06f06;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  transition: width 0.3s ease;
-}
-
-.tournament-navbar button.active {
-  color: #e06f06;
-}
-
-.tournament-navbar button.active::after {
-  width: 100%;
-}
-
-.tournament-navbar button:hover::after {
-  width: 100%;
-}
-
-.tournament-navbar button.active {
-  color: #e06f06; /* Change color of active button */
-  border-bottom: 2px solid #e06f06; /* Add underline to active button */
-}
 .video-container {
   position: relative;
   padding-bottom: 40%; /* Adjusts height dynamically based on width */
   margin-top: 15px;
-  overflow: hidden;
   max-width: 100%;
-  background: black; /* Background for video container */
+  background: black;
+  margin-bottom: 100px; /* Background for video container */
 }
 
 .video-container iframe {
   position: absolute;
-  top: 0;
+  top: 20;
+  bottom: 30;
   left: 0;
   width: 70%; /* Adjusts iframe width */
-  height: 100%; /* Ensures iframe maintains full height */
+  height: 98.3%; /* Ensures iframe maintains full height */
   margin-left: 180px;
   margin-top: 18px;
   border: 2px solid #d64e2e; /* Thin, shadow-like border */
-  box-shadow: 5px 10px 20px #d64e2e; /* Adds depth with box-shadow */
+  box-shadow: 5px 5px 10px #d64e2e; /* Adds depth with box-shadow */
 }
 
 @media (max-width: 768px) {
   .video-container {
     width: 100vw; /* Full viewport width */
-    height: 100vh; /* Maintain aspect ratio for mobile */
+    height: 50vh; /* Maintain aspect ratio for mobile */
+  }
+  .video-container iframe {
+    top: 20;
+    bottom: 30;
+    margin-left: 4%;
+    width: 90vw;
   }
 }

@@ -2,11 +2,12 @@ import React, { useRef, useState, useEffect } from "react";
 import { motion, useInView, useAnimation } from "framer-motion";
 import "./Gallery.css";
 import pub4 from "../../assets/img4.png";
+import pub5 from "../../assets/img5.png";
 import pub3 from "../../assets/img3.png";
 import pub2 from "../../assets/img2.png";
 import pub1 from "../../assets/img1.png";
 
-const images = [pub1, pub2, pub3, pub4, pub1];
+const images = [pub1, pub2, pub3, pub4, pub5];
 
 const Gallery = () => {
   const [positions, setPositions] = useState([0, 1, 2, 3, 4]);
