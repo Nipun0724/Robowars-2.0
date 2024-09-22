@@ -47,47 +47,47 @@ function App() {
     });
   }, [controls]);
   return (
-    <div className="App" style={{ overflowX: "hidden", height: "100vh" }}>
-      {!loading && isLargeScreen && <CursorTrail />}
+      <div className="App" style={{ overflowX: "hidden", height: "100vh" }}>
+        {!loading && isLargeScreen && <CursorTrail />}
 
-      <Routes>
-        <Route
-          path="/"
-          element={
-            loading ? (
-              <Loadingpage value={100 - a} />
-            ) : (
-              <div>
-                <Navbar />
-                <HeroSection />
-                <About />
-                <Categories />
-                <Gallery />
-                <FAQ />
-                <Sponsors />
-                <Contact />
-              </div>
-            )
-          }
-        />
-        <Route
-          path="/tournament"
-          element={
-            <div>
-              <Tournament />
-            </div>
-          }
-        />
+        <Routes>
           <Route
-          path="/watchlive"
-          element={
-            <div>
-              <Watchlive/>
-            </div>
-          }
-        />
-      </Routes>
-    </div>
+            path="/"
+            element={
+              loading ? (
+                <Loadingpage value={100 - a} />
+              ) : (
+                <div>
+                  <Navbar />
+                  <HeroSection />
+                  <About />
+                  <Categories />
+                  <Gallery />
+                  <FAQ />
+                  <Sponsors />
+                  <Contact />
+                </div>
+              )
+            }
+          />
+          <Route
+            path="/tournament"
+            element={
+              <div>
+                <Tournament />
+              </div>
+            }
+          />
+          <Route
+            path="/watchlive"
+            element={
+              <div>
+                <Watchlive />
+              </div>
+            }
+          />
+        </Routes>
+      </div>
   );
 }
 

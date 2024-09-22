@@ -85,7 +85,7 @@ const Tournament = () => {
         </button>
       </nav>
 
-      {activeButton === "8KG" && <Tournament8 data={data.match_8} />}
+      {activeButton === "8KG" && <Tournament8 />}
       {activeButton === "15KG" && <Tournament15 data={data.match_15} />}
       {activeButton === "60KG" && <Tournament60 data={data.match_60} />}
       <button
