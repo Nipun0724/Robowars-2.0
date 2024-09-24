@@ -38,7 +38,7 @@ const HeroSection = () => {
       .appendChild(renderer.domElement);
 
     const loader = new GLTFLoader();
-    loader.load("untitledhello3.gltf", (gltf) => {
+    loader.load("untitledhello3_new.gltf", (gltf) => {
       const model = gltf.scene;
       model.rotation.y = Math.PI / 4;
 
@@ -136,7 +136,9 @@ const HeroSection = () => {
           BOOK YOUR SEAT AND WITNESS THE CLASH OF ROBOTS.
         </p>
         <div className="buttons">
-          <button className="watch-live" onClick={handleWatchLiveClick}>Watch Live</button>
+          <button className="watch-live" onClick={handleWatchLiveClick}>
+            Watch Live
+          </button>
           <button className="matches" onClick={handleMatchesClick}>
             Matches
           </button>
