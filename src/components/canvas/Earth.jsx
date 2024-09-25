@@ -5,7 +5,7 @@ import { Environment } from '@react-three/drei';
 const Earth = () => {
   const earth = useGLTF('robo.gltf');
   return (
-    <primitive object={earth.scene} scale={0.01} position-y={-1.6} rotation-y={0} rotation-z={0} rotation-x={4.7} position-x={0.5} />
+    <primitive object={earth.scene} scale={0.01} position-y={-1.8} rotation-y={0} rotation-z={0} rotation-x={4.7} position-x={0.5} />
   );
 };
 
