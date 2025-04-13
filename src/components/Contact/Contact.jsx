@@ -110,13 +110,13 @@ const Contact = () => {
                     <div className="tw-z-10 tw-flex tw-flex-col tw-items-center tw-gap-2">
                            {" "}
                       <span className="tw-text-[#ffffff] tw-text-4xl tw-font-bold">
-                        ANIRUDDH <br /> CHOWDHURY{" "}
+                        Dhruv <br /> Agrawal{" "}
                       </span>
                            {" "}
                       <p className="tw-text-gray-50">
-                        Vice Chair Person
+                        Secretary
                         <br />
-                        Ph : 7977957614
+                        Ph : 7875115111
                       </p>
                          {" "}
                     </div>
